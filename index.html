@@ -394,7 +394,10 @@
               to send inquiries directly. While it is empty, submitting opens the visitor's
               email app with the inquiry pre-filled, addressed to info@azamix.com.
             -->
-            <form id="inquiry-form" data-endpoint="" action="mailto:info@azamix.com" method="post" enctype="text/plain">
+            <noscript>
+              <p class="form-foot__note">This form needs JavaScript. Please email your project details to <a href="mailto:info@azamix.com">info@azamix.com</a>.</p>
+            </noscript>
+            <form id="inquiry-form" data-endpoint="">
               <div class="form-grid">
                 <div class="field">
                   <label for="name">Your name</label>

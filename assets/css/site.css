@@ -1557,6 +1557,11 @@ body.menu-open {
   color: var(--text);
 }
 
+/* The form sends via JavaScript only; without it, a plain email link is shown instead */
+html:not(.js) #inquiry-form {
+  display: none;
+}
+
 .form-card__sub {
   margin-top: var(--s-2);
   margin-bottom: var(--s-6);

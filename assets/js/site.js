@@ -117,7 +117,7 @@
   var form = document.getElementById("inquiry-form");
   if (!form) return;
 
-  form.noValidate = true; // we show our own messages; native validation stays as the no-JS fallback
+  form.noValidate = true; // we show our own validation messages
   var CONTACT_EMAIL = "info@azamix.com";
   var endpoint = (form.getAttribute("data-endpoint") || "").trim();
   var startedAt = Date.now();
