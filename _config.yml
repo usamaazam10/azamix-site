@@ -1,0 +1,6 @@
+# GitHub Pages serves this repo as plain static files. Keep repo-only files off the live site.
+theme: null # no default theme: stops Pages adding an unused assets/css/style.css
+exclude:
+  - README.md
+  - CLAIMS-AUDIT.md
+  - .claude
