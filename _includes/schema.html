@@ -1,0 +1,94 @@
+{%- comment -%}
+  Structured data, limited to facts the site can stand behind:
+  Organization (home), Service (service pages), Article (articles) and breadcrumbs.
+  No ratings, reviews, addresses or FAQ markup.
+{%- endcomment -%}
+{%- assign canonical = page.url | replace: "index.html", "" | prepend: site.url -%}
+{%- assign org = '{"@type":"Organization","name":"Azamix","url":"https://azamix.com/"}' -%}
+{%- if page.body_class == "home" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Azamix",
+        "url": "https://azamix.com/",
+        "logo": "https://azamix.com/assets/brand/azamix-icon-512.png",
+        "email": {{ site.email | jsonify }},
+        "telephone": "+92-342-6147283"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Azamix",
+        "url": "https://azamix.com/"
+      }
+    ]
+  }
+  </script>
+{%- elsif page.layout == "service" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": {{ page.service_name | jsonify }},
+        "description": {{ page.description | jsonify }},
+        "url": {{ canonical | jsonify }},
+        "provider": {{ org }}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://azamix.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://azamix.com/services/" },
+          { "@type": "ListItem", "position": 3, "name": {{ page.service_name | jsonify }}, "item": {{ canonical | jsonify }} }
+        ]
+      }
+    ]
+  }
+  </script>
+{%- elsif page.layout == "article" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": {{ page.title | jsonify }},
+        "description": {{ page.description | jsonify }},
+        "url": {{ canonical | jsonify }},
+        "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+        "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+        "author": {{ org }},
+        "publisher": {
+          "@type": "Organization",
+          "name": "Azamix",
+          "logo": { "@type": "ImageObject", "url": "https://azamix.com/assets/brand/azamix-icon-512.png" }
+        },
+        "image": "https://azamix.com/assets/img/og-image.png"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://azamix.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://azamix.com/insights/" },
+          { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": {{ canonical | jsonify }} }
+        ]
+      }
+    ]
+  }
+  </script>
+{%- elsif page.crumb %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://azamix.com/" },
+      { "@type": "ListItem", "position": 2, "name": {{ page.crumb | jsonify }}, "item": {{ canonical | jsonify }} }
+    ]
+  }
+  </script>
+{%- endif %}

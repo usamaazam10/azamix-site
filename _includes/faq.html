@@ -1,0 +1,9 @@
+{%- comment -%} Params: items (array of {q, a}); answers may contain HTML. {%- endcomment -%}
+          <div class="faq">
+            {%- for item in include.items %}
+            <details>
+              <summary>{{ item.q }}</summary>
+              <div class="faq__a">{{ item.a | markdownify }}</div>
+            </details>
+            {%- endfor %}
+          </div>

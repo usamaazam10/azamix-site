@@ -1,7 +1,47 @@
-# GitHub Pages serves this repo as plain static files. Keep repo-only files off the live site.
+# GitHub Pages builds this repo with Jekyll (the same version as the Gemfile pins).
+# Pages, articles and shared header/footer are assembled from _layouts and _includes.
+title: Azamix
+tagline: Technology worth knowing. Software worth building.
+description: >-
+  Azamix designs and builds custom software, mobile apps, web platforms and practical AI
+  integrations, and publishes clear explanations of the technology behind them.
+url: https://azamix.com
+email: usamaazam10@gmail.com
+phone: "+92 342 6147283"
+phone_href: "+923426147283"
+
+# Project inquiry delivery. Empty: the form opens the visitor's email app, pre-filled.
+# Set to a form-backend URL that accepts JSON (e.g. "https://formspree.io/f/xxxxxxx")
+# to send inquiries directly. See README.md.
+form_endpoint: ""
+
 theme: null # no default theme: stops Pages adding an unused assets/css/style.css
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+
+# Published articles live in _posts/ and are served under /insights/.
+# Unpublished drafts live in _drafts/ and are never built on the live site.
+permalink: /insights/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+      nav: insights
+
+# Keep repo-only files off the live site.
 exclude:
   - README.md
   - CLAIMS-AUDIT.md
   - BRAND.md
+  - EDITORIAL.md
   - .claude
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - tools

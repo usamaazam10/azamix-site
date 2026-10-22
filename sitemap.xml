@@ -1,7 +1,14 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://azamix.com/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://azamix.com/services/custom-software/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://azamix.com/services/web-mobile-apps/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://azamix.com/services/cloud-devops/</loc><lastmod>2026-10-21</lastmod></url>
+  {%- for p in site.html_pages %}
+  {%- unless p.robots contains "noindex" or p.url == "/404.html" %}
+  <url><loc>{{ site.url }}{{ p.url | replace: "index.html", "" }}</loc></url>
+  {%- endunless %}
+  {%- endfor %}
+  {%- for post in site.posts %}
+  <url><loc>{{ site.url }}{{ post.url }}</loc><lastmod>{{ post.last_modified_at | default: post.date | date: "%Y-%m-%d" }}</lastmod></url>
+  {%- endfor %}
 </urlset>

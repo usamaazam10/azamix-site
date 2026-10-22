@@ -1,0 +1,173 @@
+---
+layout: service
+nav: services
+title: Web Applications and Platforms
+service_name: Web Applications and Platforms
+service_key: web-applications
+description: Customer portals, employee portals, admin dashboards and SaaS products built by Azamix, with secure authentication, clear permissions, a solid backend API and attention to performance and accessibility.
+headline: Web applications people can log in to and get things done.
+lede: Customer and employee portals, admin dashboards and SaaS products. Designed around the tasks people come to complete, built on a secure backend with clear permissions, and kept fast and accessible as they grow.
+glance:
+  - label: Typical projects
+    value: Portals, dashboards, SaaS products
+  - label: Front end
+    value: React
+  - label: Backend
+    value: Node.js or Python
+topics: [explained, developer-tools, guides]
+faq_no: "07"
+cta_title: Need more than a website?
+cta_text: Tell us who needs to log in and what they need to do. We'll discuss the requirements and possible next steps.
+faqs:
+  - q: What's the difference between a website and a web application?
+    a: |
+      A website mainly presents information that's the same for every visitor. A web application lets people log in, work with their own data and complete tasks, such as placing orders, managing bookings or approving requests. That needs a backend, a database, authentication and permissions, which is where most of the work is.
+  - q: Can you build a SaaS product?
+    a: |
+      Yes. A SaaS product adds some specific requirements: keeping each customer's data separate, subscription billing, onboarding, and admin tools for your own team. We plan these from the start, because adding them to a single-customer application later is difficult.
+  - q: Will it work on phones?
+    a: |
+      Yes. Everything we build is responsive and tested on phone, tablet and desktop screen sizes. If people need device features such as notifications or offline use regularly, we'll discuss whether a [mobile app](/services/mobile-apps/) is also worth it.
+  - q: Do you build public marketing websites?
+    a: |
+      Our focus is applications: software people log in to and use. A public site that sits in front of an application, such as a product's landing and pricing pages, can be part of a project.
+  - q: How do you handle accessibility?
+    a: |
+      We build with semantic HTML, keyboard support, visible focus states, sufficient colour contrast and form labels and errors that screen readers can announce, and we check these as we build rather than at the end. If you have a formal accessibility requirement, tell us at the start so the scope and testing reflect it.
+  - q: Can the application connect to our other systems?
+    a: |
+      Usually, if those systems offer an API or webhooks. We check this during discovery. See [API Development and System Integrations](/services/api-integrations/).
+---
+    <section class="section" aria-labelledby="problems-title">
+      <div class="container">
+        {% include section-head.html no="01" label="Problems it addresses" id="problems-title" title="When a website stops being enough." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <ul class="problems">
+            <li class="problem"><h3>Customers have to ask you for everything</h3><p>Order status, invoices, documents and account changes all go through email or phone. A customer portal lets them help themselves, and frees your team for questions that need a person.</p></li>
+            <li class="problem"><h3>Your team manages records in shared files</h3><p>An admin dashboard with search, filters, permissions and history replaces the shared spreadsheet and the "who changed this?" conversations.</p></li>
+            <li class="problem"><h3>You have a product idea that runs in the browser</h3><p>A SaaS product needs accounts, billing and per-customer data separation built in from the first version, not bolted on later.</p></li>
+            <li class="problem"><h3>An existing application is slow or fragile</h3><p>Pages take seconds to load, and changes break unrelated features. Performance work and gradual restructuring can often fix this without starting over.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="deliverables-title">
+      <div class="container">
+        {% include section-head.html no="02" label="Capabilities" id="deliverables-title" title="What we build." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <ul class="rule-list deliverables">
+            <li><strong>Customer and employee portals</strong><span>Secure areas where people see their own data and complete tasks: orders, bookings, documents, requests.</span></li>
+            <li><strong>Admin dashboards</strong><span>Tools for your team to manage records, users and content, with search, filtering, bulk actions and an audit trail.</span></li>
+            <li><strong>SaaS products</strong><span>Multi-customer applications with sign-up, onboarding, subscription billing and data separation between customers.</span></li>
+            <li><strong>Authentication and permissions</strong><span>Sign-in, password reset, optional two-factor authentication or single sign-on, and role-based access control.</span></li>
+            <li><strong>Backend APIs</strong><span>A documented API that the web app, and later a mobile app or partners, can all use.</span></li>
+            <li><strong>Reporting and exports</strong><span>Dashboards, charts and CSV or PDF exports built from the application's own data.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fit-title">
+      <div class="container">
+        {% include section-head.html no="03" label="Use cases" id="fit-title" title="Is this the right service?" %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <div class="pair fit">
+            <div>
+              <h3>A good fit when</h3>
+              <ul class="rule-list rule-list--compact marked marked--plus">
+                <li>People need to log in and work with their own data</li>
+                <li>Your team or customers use it on a mix of devices</li>
+                <li>You want one system that a mobile app or partners could use later</li>
+                <li>You're launching a subscription software product</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Probably not needed when</h3>
+              <ul class="rule-list rule-list--compact marked marked--minus">
+                <li>You need a brochure site; a website builder will do</li>
+                <li>A well-known SaaS product already does the job</li>
+                <li>Users mostly need it offline or on the move; consider a <a href="/services/mobile-apps/">mobile app</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tech-title">
+      <div class="container">
+        {% include section-head.html no="04" label="Technical considerations" id="tech-title" title="What happens under the interface." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <div>
+            <figure class="figure figure--flush">
+              <div class="figure__frame">
+                <div class="figure__bar" aria-hidden="true"><span><b>Fig. 1</b>&nbsp;&nbsp;What happens when someone opens a portal page</span><span>Simplified</span></div>
+                <ol class="flow">
+                  <li>Browser<small>Requests the page</small></li>
+                  <li>Session check<small>Who is this?</small></li>
+                  <li>Permission check<small>May they see it?</small></li>
+                  <li class="is-core">API query<small>Only their data</small></li>
+                  <li>Render<small>Fast, accessible UI</small></li>
+                </ol>
+              </div>
+            </figure>
+            <div class="two-col-text gap-top">
+              <div>
+                <h3>Authentication and permissions</h3>
+                <p>Every request is checked on the server: who the user is, and whether their role allows this action on this record. Hiding a button in the interface isn't security; the API enforces the rules.</p>
+              </div>
+              <div>
+                <h3>Performance</h3>
+                <p>We measure load times on ordinary phones and connections, not only on developer laptops. Database queries are indexed, large lists are paginated, and heavy work runs in background jobs so pages stay responsive.</p>
+              </div>
+              <div>
+                <h3>Accessibility</h3>
+                <p>Keyboard navigation, focus states, labels, contrast and screen reader support are built in from the first screen. Accessible applications are also easier for everyone to use.</p>
+              </div>
+              <div>
+                <h3>Data separation for SaaS</h3>
+                <p>When one application serves many customers, every query must be scoped to the right customer. We design this into the data model and test it, because a leak between customers is the most damaging bug a SaaS product can have.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        {% include section-head.html no="05" label="Delivery" id="process-title" title="How a project runs." %}
+        <ol class="stages stages--compact">
+          <li class="stage rail reveal"><div class="stage__name"><span>01</span><h3>Users and tasks</h3></div><div class="pair"><p>Who logs in, what they come to do, and what data and permissions that requires.</p><p class="stage__out">Written requirements and roles</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>02</span><h3>Scope and architecture</h3></div><div class="pair"><p>The first release, the data model, the API design and hosting approach.</p><p class="stage__out">Agreed scope and estimate</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>03</span><h3>Interface design</h3></div><div class="pair"><p>Key screens designed around the most frequent tasks and reviewed before building.</p><p class="stage__out">Screens to review</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>04</span><h3>Iterative build</h3></div><div class="pair"><p>Features delivered to a staging environment you can log in to and try.</p><p class="stage__out">A working staging site</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>05</span><h3>Test and harden</h3></div><div class="pair"><p>Automated tests, permission checks, performance and accessibility review across devices.</p><p class="stage__out">A release candidate</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>06</span><h3>Launch and hand over</h3></div><div class="pair"><p>Production deployment, monitoring, documentation and access.</p><p class="stage__out">A live application</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ownership-title">
+      <div class="container">
+        {% include section-head.html no="06" label="Maintenance and ownership" id="ownership-title" title="After launch." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <div class="two-col-text">
+            <div>
+              <h3>Maintenance</h3>
+              <p>Frameworks and libraries release security updates continuously. An application that isn't updated accumulates risk. Ongoing maintenance, monitoring and improvements can be agreed separately. See <a href="/services/cloud-devops/">Cloud, Deployment and Ongoing Engineering Support</a>.</p>
+            </div>
+            <div>
+              <h3>Ownership</h3>
+              <p>Ownership of code and deliverables is set out in the project agreement. Handover includes the source code, documentation, and instructions for deploying and running the application.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

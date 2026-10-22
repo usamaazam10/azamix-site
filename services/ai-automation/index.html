@@ -1,0 +1,165 @@
+---
+layout: service
+nav: services
+title: AI Integration and Workflow Automation
+service_name: AI Integration and Workflow Automation
+service_key: ai-automation
+description: Practical workflow automation and AI features from Azamix, including document processing, data extraction and classification, built with evaluation, human review, cost control and data privacy in mind.
+headline: Automation that removes real work, and AI only where it earns its place.
+lede: We automate the predictable steps in your workflows with ordinary code, and use AI models for the parts that genuinely need them, such as reading documents or sorting requests. Every AI feature is tested against real examples and designed with human review, error handling and running costs in mind.
+glance:
+  - label: Typical work
+    value: Document processing, routing, workflow automation
+  - label: AI models
+    value: Hosted model APIs, not custom models by default
+  - label: Built in
+    value: Evaluation, review queues, cost monitoring
+topics: [ai-automation]
+faq_no: "07"
+cta_title: Got a workflow that eats hours every week?
+cta_text: Describe the steps and a few typical examples. We'll discuss which parts can be automated reliably and possible next steps.
+faqs:
+  - q: Do we need our own AI model?
+    a: |
+      Almost certainly not to begin with. For most business tasks, such as extracting fields from documents, classifying requests or drafting text, a hosted model accessed through an API, given clear instructions, examples and the relevant data at the time of the request, performs well. Training or fine-tuning a custom model is expensive and only worth considering once a working system shows a specific gap that it would close.
+  - q: Will our data be used to train the provider's models?
+    a: |
+      That depends on the provider and the terms of the plan used. Before any real data is sent, we review the current data-use and retention terms with you, decide what data actually needs to leave your systems, and remove or mask what doesn't.
+  - q: How accurate will it be?
+    a: |
+      We don't know until we test it on your data, and nobody should promise a figure before that. We build a test set from real examples, measure results against it, and share them with you before deciding whether to proceed. Where accuracy matters, the design includes human review rather than assuming the model is right.
+  - q: Can the process run without anyone checking it?
+    a: |
+      Some steps can, when the results are easy to validate automatically and mistakes are cheap to fix. Others should always have a person approve the output. We decide this step by step, based on what an error would cost.
+  - q: What does it cost to run?
+    a: |
+      AI APIs are usually priced by the amount of text processed, so costs grow with volume. We estimate running costs from your real volumes and sample documents before building, use the smallest model that performs well enough, and add monitoring so costs don't drift unnoticed.
+  - q: Can you add AI features to software we already have?
+    a: |
+      Often, yes, if the software has an API or a way to exchange data. The AI part is usually a service that sits alongside your existing system, reading inputs and writing results back. See [API Development and System Integrations](/services/api-integrations/).
+---
+    <section class="section" aria-labelledby="problems-title">
+      <div class="container">
+        {% include section-head.html no="01" label="Problems it addresses" id="problems-title" title="Work that's repetitive, but not quite simple." lede="Some tasks are fully predictable and need no AI at all. Others involve reading, sorting or writing, which is where language models can help. Most real workflows contain both." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <ul class="problems">
+            <li class="problem"><h3>Re-typing data from documents</h3><p>Invoices, order forms, applications and delivery notes arrive as PDFs or emails, and someone copies the details into another system. Extracting the fields automatically, with a person checking the uncertain ones, can remove most of the typing.</p></li>
+            <li class="problem"><h3>Sorting and routing requests</h3><p>Support emails, enquiries and internal requests need to reach the right person. Classification can route the clear-cut cases immediately and flag the rest.</p></li>
+            <li class="problem"><h3>Copying data between systems</h3><p>Exports, imports and copy-paste between tools that don't talk to each other. This usually needs no AI at all, just a reliable integration and a schedule.</p></li>
+            <li class="problem"><h3>Writing the same kind of reply</h3><p>Responses that follow a pattern but need adjusting each time. A drafted reply that a person edits and sends can save time without handing over judgement.</p></li>
+            <li class="problem"><h3>Finding information in internal documents</h3><p>Policies, manuals and past records exist, but finding the right paragraph takes too long. Search that understands questions, and cites its sources, can help.</p></li>
+            <li class="problem"><h3>Not knowing what's realistic</h3><p>It's hard to tell which AI claims apply to your work. Testing a specific use case on your own examples answers that question with evidence.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="deliverables-title">
+      <div class="container">
+        {% include section-head.html no="02" label="Capabilities" id="deliverables-title" title="What we build." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <ul class="rule-list deliverables">
+            <li><strong>Workflow automation</strong><span>Scheduled jobs, triggers and integrations that carry out predictable steps without manual work, usually with no AI involved.</span></li>
+            <li><strong>Document and text processing</strong><span>Reading PDFs, scans and emails, and turning them into data your systems can use.</span></li>
+            <li><strong>Structured data extraction</strong><span>Pulling specific fields into a defined format, validating them, and flagging anything missing or doubtful.</span></li>
+            <li><strong>Classification and routing</strong><span>Sorting incoming items by type, urgency or destination, with rules for what happens when the model is unsure.</span></li>
+            <li><strong>Drafting with review</strong><span>Suggested replies, summaries or descriptions that a person checks, edits and approves.</span></li>
+            <li><strong>Search over your own documents</strong><span>Question answering grounded in your documents, showing which sources each answer came from.</span></li>
+            <li><strong>Review queues and monitoring</strong><span>Interfaces for people to check and correct results, plus logs of what was processed, what failed and what it cost.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fit-title">
+      <div class="container">
+        {% include section-head.html no="03" label="Use cases" id="fit-title" title="Which tool for which step." lede="A useful rule of thumb when we look at a workflow, step by step." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Choosing between ordinary code, AI models and people">
+            <table class="compare">
+              <caption>Matching each step of a workflow to the right approach</caption>
+              <thead>
+                <tr><th scope="col">If the step is…</th><th scope="col">Use</th><th scope="col">Example</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Predictable, with clear rules</th><td>Ordinary code: cheaper, faster and exact</td><td>Copy new orders to the accounting system every hour</td></tr>
+                <tr><th scope="row">Reading or writing language, where small errors can be caught</th><td>An AI model, with validation and review</td><td>Extract supplier, date and total from an invoice PDF</td></tr>
+                <tr><th scope="row">A judgement with real consequences</th><td>A person, helped by software</td><td>Approve a refund, with the case summarised for them</td></tr>
+                <tr><th scope="row">Rare, or different every time</th><td>Leave it manual</td><td>An unusual contract negotiation</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tech-title">
+      <div class="container">
+        {% include section-head.html no="04" label="Technical considerations" id="tech-title" title="What responsible AI integration involves." lede="Calling an AI API takes minutes. Making the result dependable takes design. These are the parts we plan for on every AI feature." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <div class="two-col-text">
+            <div>
+              <h3>Evaluation</h3>
+              <p>Before building the full feature, we collect real examples with known correct answers and measure the model against them. The same test set is rerun whenever the instructions or model change, so improvements and regressions are visible.</p>
+            </div>
+            <div>
+              <h3>Human review and error handling</h3>
+              <p>Language models can produce confident, wrong answers. Outputs are validated against expected formats and rules, uncertain results go to a review queue, and failures are retried or flagged rather than silently dropped.</p>
+            </div>
+            <div>
+              <h3>Data privacy</h3>
+              <p>We decide exactly which data needs to be sent to an AI provider, mask or remove personal details where possible, and check the provider's data-use and retention terms with you before real data is processed.</p>
+            </div>
+            <div>
+              <h3>Operating costs</h3>
+              <p>AI APIs charge by usage. We estimate costs from your real volumes, choose the smallest model that meets the accuracy you need, avoid sending unnecessary text, and monitor spend over time.</p>
+            </div>
+            <div>
+              <h3>Limitations</h3>
+              <p>Models don't know your business unless the relevant information is supplied with each request, their outputs vary between runs, and providers update them. A good design assumes all three.</p>
+            </div>
+            <div>
+              <h3>Provider independence</h3>
+              <p>We keep the AI step behind a small interface in your system, so changing provider or model later is a contained change rather than a rewrite.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        {% include section-head.html no="05" label="Delivery" id="process-title" title="Prove it on real examples first." lede="AI projects carry more uncertainty than ordinary software, so the process includes a point where we decide, with evidence, whether to continue." %}
+        <ol class="stages stages--compact">
+          <li class="stage rail reveal"><div class="stage__name"><span>01</span><h3>Map the workflow</h3></div><div class="pair"><p>Each step, its volume, the time it takes and what a mistake would cost.</p><p class="stage__out">A step-by-step map with candidates for automation</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>02</span><h3>Collect real examples</h3></div><div class="pair"><p>A representative sample of documents or requests, with the correct outcome for each.</p><p class="stage__out">A test set</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>03</span><h3>Prototype and measure</h3></div><div class="pair"><p>A focused prototype run against the test set, with accuracy, failure types and estimated running costs.</p><p class="stage__out">Measured results</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>04</span><h3>Decide</h3></div><div class="pair"><p>Continue, adjust the scope, or stop. Sometimes the honest answer is that ordinary automation, or no change, is better.</p><p class="stage__out">An evidence-based decision</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>05</span><h3>Build into the workflow</h3></div><div class="pair"><p>Integration with your systems, review interfaces, validation, logging and alerts.</p><p class="stage__out">A working, monitored process</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>06</span><h3>Monitor and refine</h3></div><div class="pair"><p>Track accuracy, corrections and costs in real use, and improve where the data shows problems.</p><p class="stage__out">A process that stays reliable</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ownership-title">
+      <div class="container">
+        {% include section-head.html no="06" label="Ownership" id="ownership-title" title="Maintenance and ownership." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <div class="two-col-text">
+            <div>
+              <h3>Models change</h3>
+              <p>AI providers release new models and retire old ones on their own schedule. Keeping the test set and rerunning it before switching models is part of maintaining an AI feature. Ongoing support can be agreed separately.</p>
+            </div>
+            <div>
+              <h3>Accounts and ownership</h3>
+              <p>We recommend AI provider accounts and API keys belong to your organisation, so usage, billing and data agreements are in your name. Ownership of the code and deliverables is set out in the project agreement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

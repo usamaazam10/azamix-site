@@ -1,0 +1,65 @@
+---
+layout: default
+nav: contact
+crumb: Contact
+title: Start a project
+description: Tell Azamix what you're trying to build or improve. Send a project inquiry or email us directly, and we'll discuss the requirements and possible next steps.
+---
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Contact</li>
+          </ol>
+        </nav>
+        <h1 id="page-title">Tell us what you're trying to build.</h1>
+        <div class="hero__sub rail">
+          <div></div>
+          <p class="lede">Describe the problem in your own words. You don't need a specification, a budget figure or technical vocabulary to start. We'll discuss the requirements and possible next steps.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head rail">
+          <p class="section-label">Contact</p>
+          <div>
+            <h2 id="contact-title">Send an inquiry, or write to us directly.</h2>
+          </div>
+        </div>
+
+        <div class="rail">
+          <div class="contact-side">
+            <ul class="channels">
+              <li>
+                <a class="channel" href="mailto:{{ site.email }}">
+                  <span class="channel__label">Email</span>
+                  <span class="channel__value"><span>{{ site.email }}</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14L14 6M7 6h7v7"/></svg></span>
+                </a>
+              </li>
+              <li>
+                <a class="channel" href="tel:{{ site.phone_href }}">
+                  <span class="channel__label">Phone</span>
+                  <span class="channel__value"><span>{{ site.phone | replace: " ", "&nbsp;" }}</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14L14 6M7 6h7v7"/></svg></span>
+                </a>
+              </li>
+            </ul>
+
+            <div class="contact-help">
+              <h3>Useful to mention</h3>
+              <ul>
+                <li>What you're trying to do, and what happens today without it</li>
+                <li>Who will use it: customers, staff, or both</li>
+                <li>Any systems it needs to work with</li>
+                <li>Deadlines or constraints we should know about</li>
+                <li>Whether you need an NDA before sharing details</li>
+              </ul>
+            </div>
+          </div>
+
+{% include inquiry-form.html %}
+        </div>
+      </div>
+    </section>

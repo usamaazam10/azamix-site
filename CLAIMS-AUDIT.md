@@ -1,13 +1,53 @@
 # Claims audit — azamix.com
 
-Last audit: 21 October 2026. This file is excluded from the published site (`_config.yml`).
+Last audit: 22 October 2026. This file is excluded from the published site (`_config.yml`).
 
-Every factual statement on the site has to trace back to one of these two sources:
+Every factual statement on the site has to trace back to one of these sources:
 
 - **S1 — the original site** (`index.html` as of commit `2448c57`): service names and descriptions, the About text, the technology list, the three project entries, the email address, the phone number, and the name "Azamix Software Solutions".
 - **S2 — the owner's brief** (October 2026): info@azamix.com, +92 342 6147283, the three services, and the instruction not to fabricate credentials.
+- **S3 — the owner's content and structure brief** (22 October 2026): the dual services/publication positioning; six services (custom software, mobile, web, AI and automation, APIs and integrations, cloud and support); the seven-stage process; the seven engineering principles; the eight FAQ questions; "some projects are confidential"; no public portfolio; the positioning line and CTA wording.
 
 Anything else was either removed or labelled. Removed text is kept below so it can be restored once the owner confirms it.
+
+## 22 October 2026 restructure
+
+### Restored, now sourced from S3
+
+Sections 1–3 under "Removed until the owner confirms" (process, working principles, FAQs) are covered by S3 and are back on the site in new wording. The S1 project entries (ERP, e-commerce, cloud dashboard) are **no longer presented as projects**. The Solutions section describes six *types* of system (from S3), and the three drawings are captioned "Illustration… not a client system".
+
+### Written carefully because terms aren't established
+
+| Topic | What the site says | Why |
+| --- | --- | --- |
+| Code ownership | "Set out in the written agreement for each project" | S3 says not to promise unestablished legal terms |
+| NDA | "Some of our work is confidential… mention it and we'll review it" | S3: "some projects are confidential". No promise to sign any NDA |
+| Estimates and timelines | Estimates follow agreed scope; no fixed timelines | S3 |
+| Maintenance | "When agreed" | S3 process step 7 |
+| Store, cloud and AI accounts | "We recommend" they're registered to the client | Phrased as advice, not as a statement of past practice |
+| Store approval, AI accuracy | Explicitly not guaranteed | Factual |
+| Contact response | "We'll discuss the requirements and possible next steps" | S3 CTA wording. No response time is promised |
+
+### New statements that go beyond S1–S3: owner to confirm
+
+| Statement | Where |
+| --- | --- |
+| "Our main mobile toolkit is Flutter"; native development recommended "when requirements call for it" | Mobile page, FAQ |
+| "Our cloud work is based on AWS" | Cloud page FAQ (S1 lists AWS; it doesn't say *only* AWS) |
+| Practices named under the principles: code review before merge, automated tests on every change, dependency vulnerability checks, accessibility checked while building, backups restored periodically | Homepage, Approach page, service pages |
+| "Mainly provided for the software we build" (cloud and support) | Cloud page, homepage note |
+| Typical deliverables listed on service pages (e.g. TestFlight beta testing, staging environments, runbooks, data migration) | Service pages |
+
+If any of these isn't how Azamix works, edit the wording rather than leaving it in place.
+
+### Open questions (new)
+
+1. Can the eight draft articles be published under the byline "Azamix", or should they carry a named author?
+2. Is the "In preparation" list on /insights/ acceptable publicly? (Delete `_data/planned.yml` entries to hide it.)
+3. Should the form be connected to a form backend (see README) so inquiries arrive without the visitor's email app?
+4. Is there a privacy policy to link from the contact form? None is claimed today.
+
+The original questions below about WhatsApp, the technology list and response times are still open.
 
 ## Checks with nothing found
 
@@ -26,7 +66,7 @@ Anything else was either removed or labelled. Removed text is kept below so it c
 
 | Claim | Where | Source |
 | --- | --- | --- |
-| Azamix Software Solutions / Azamix | Footer, structured data | S1 footer |
+| Azamix (shortened from "Azamix Software Solutions" at the owner's request, October 2026) | Footer, structured data | S1 footer |
 | usamaazam10@gmail.com (replaced info@azamix.com at the owner's request, October 2026), +92 342 6147283 | Contact, footer, menu, structured data, form | S1, S2 |
 | Custom software: enterprise systems, automation platforms, secure, scalable, tailored | Home, service page | S1 services |
 | Web & mobile apps: fast, responsive, modern frameworks, UX principles | Home, service page | S1 services |

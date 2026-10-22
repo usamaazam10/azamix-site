@@ -1,0 +1,43 @@
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__main rail">
+        <div class="footer__about">
+          <a class="brand" href="/">
+            <img class="brand__logo" src="/assets/brand/azamix-logo-dark.svg" alt="Azamix home" width="155" height="26" loading="lazy" />
+          </a>
+          <p>{{ site.tagline }}</p>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h2>Services</h2>
+            <ul>
+              {%- for s in site.data.services %}
+              <li><a href="{{ s.url }}">{{ s.short }}</a></li>
+              {%- endfor %}
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2>Azamix</h2>
+            <ul>
+              <li><a href="/approach/">How we work</a></li>
+              <li><a href="/insights/">Insights</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2>Contact</h2>
+            <ul>
+              <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+              <li><a href="tel:{{ site.phone_href }}">{{ site.phone | replace: " ", "&nbsp;" }}</a></li>
+              <li><a href="/feed.xml">Insights feed (Atom)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span data-year>{{ site.time | date: "%Y" }}</span> Azamix. All rights reserved.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>

@@ -109,6 +109,44 @@
     el.textContent = String(new Date().getFullYear());
   });
 
+  /* ---------- Insights topic filter ----------
+     Buttons show only the articles in one topic. The choice is kept in the URL
+     hash (/insights/#mobile) so it can be linked to. */
+  var filter = document.querySelector("[data-topic-filter]");
+  if (filter) {
+    var rows = document.querySelectorAll(".post-row[data-topic]");
+    var buttons = filter.querySelectorAll("button[data-topic]");
+    var countEl = document.querySelector("[data-filter-count]");
+    var applyTopic = function (topic, updateHash) {
+      var shown = 0;
+      var valid = topic === "all";
+      buttons.forEach(function (b) {
+        if (b.dataset.topic === topic) valid = true;
+      });
+      if (!valid) topic = "all";
+      buttons.forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b.dataset.topic === topic));
+      });
+      rows.forEach(function (row) {
+        var match = topic === "all" || row.dataset.topic === topic;
+        row.hidden = !match;
+        if (match) shown++;
+      });
+      if (countEl) {
+        countEl.textContent = shown === 1 ? "1 article" : shown + " articles";
+      }
+      if (updateHash && window.history.replaceState) {
+        window.history.replaceState(null, "", topic === "all" ? window.location.pathname : "#" + topic);
+      }
+    };
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        applyTopic(b.dataset.topic, true);
+      });
+    });
+    applyTopic(window.location.hash.slice(1) || "all", false);
+  }
+
   /* ---------- Project inquiry form ----------
      Delivery: if the form has a data-endpoint (e.g. a Formspree URL), the
      inquiry is POSTed there as JSON. Without one, the visitor's email app
@@ -118,7 +156,7 @@
   if (!form) return;
 
   form.noValidate = true; // we show our own validation messages
-  var CONTACT_EMAIL = "usamaazam10@gmail.com";
+  var CONTACT_EMAIL = form.getAttribute("data-email") || "usamaazam10@gmail.com";
   var endpoint = (form.getAttribute("data-endpoint") || "").trim();
   var startedAt = Date.now();
   var submitBtn = form.querySelector('[type="submit"]');
@@ -128,6 +166,7 @@
   // Pre-select a service from ?service=… (links on service pages use this)
   var params = new URLSearchParams(window.location.search);
   var preset = params.get("service");
+  if (preset === "web-mobile-apps") preset = "web-applications"; // retired combined service page
   var serviceSelect = form.elements.namedItem("service");
   if (preset && serviceSelect) {
     Array.prototype.forEach.call(serviceSelect.options, function (opt) {

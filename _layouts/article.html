@@ -1,0 +1,101 @@
+---
+layout: default
+---
+{%- comment -%}
+  Article page. Front matter: title, description, topic (key from _data/topics.yml), tags,
+  date, last_modified_at (only when the article was substantively revised),
+  service (optional key from _data/services.yml for the closing link), status: draft.
+{%- endcomment -%}
+{%- assign t = site.data.topics | where: "key", page.topic | first -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 220 | plus: 1 -%}
+{%- assign share_url = page.url | prepend: site.url | uri_escape -%}
+{%- assign share_title = page.title | uri_escape -%}
+    <article class="article" aria-labelledby="page-title">
+      <header class="article-head">
+        <div class="container">
+          {%- if page.status == "draft" %}
+          <p class="draft-banner" role="note"><strong>Unpublished draft.</strong> This article lives in <code>_drafts/</code> and is not built on the live site. Check the facts and sources, then follow EDITORIAL.md to publish it.</p>
+          {%- endif %}
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li><a href="/insights/">Insights</a></li>
+              <li><a href="/insights/#{{ page.topic }}">{{ t.name }}</a></li>
+            </ol>
+          </nav>
+          <p class="kicker">{{ t.name }}</p>
+          <h1 id="page-title">{{ page.title }}</h1>
+          <p class="article-dek">{{ page.description }}</p>
+          <p class="article-meta meta">
+            <span>By Azamix</span>
+            <span>Published <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time></span>
+            {%- if page.last_modified_at %}
+            <span>Updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+            {%- endif %}
+            <span>{{ minutes }} min read</span>
+          </p>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="article-layout rail">
+          <aside class="article-aside" aria-label="About this article">
+            {%- if page.tags.size > 0 %}
+            <div>
+              <p class="list-title">Tags</p>
+              <ul class="tag-list">
+                {%- for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+              </ul>
+            </div>
+            {%- endif %}
+            <div>
+              <p class="list-title">Share</p>
+              <ul class="share-list">
+                <li><a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" rel="noopener" target="_blank">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                <li><a href="https://x.com/intent/post?url={{ share_url }}&amp;text={{ share_title }}" rel="noopener" target="_blank">X<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                <li><a href="mailto:?subject={{ share_title }}&amp;body={{ share_url }}">Email</a></li>
+              </ul>
+            </div>
+          </aside>
+          <div class="prose">
+{{ content }}
+          </div>
+        </div>
+      </div>
+    </article>
+
+    {%- assign same = site.posts | where: "topic", page.topic -%}
+    {%- assign related = "" | split: "" -%}
+    {%- for p in same %}{% if p.url != page.url %}{% assign related = related | push: p %}{% endif %}{% endfor -%}
+    {%- for p in site.posts %}{% if p.url != page.url and p.topic != page.topic %}{% assign related = related | push: p %}{% endif %}{% endfor -%}
+    {%- assign related = related | slice: 0, 3 %}
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container">
+        {%- assign svc = site.data.services | where: "key", page.service | first %}
+        <div class="section-head rail">
+          <p class="section-label">From Azamix</p>
+          <div>
+            <h2 id="cta-title">Have a software problem worth solving?</h2>
+            <p class="lede">Azamix designs and builds the kind of software this article describes. Tell us what you are trying to build or improve, and we'll discuss the requirements and possible next steps.</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="/contact/{% if svc %}?service={{ svc.key }}{% endif %}">Start a project {% include arrow.html %}</a>
+              {%- if svc %}
+              <a class="btn btn--on-dark" href="{{ svc.url }}">{{ svc.name }}</a>
+              {%- endif %}
+            </div>
+          </div>
+        </div>
+        {%- if related.size > 0 %}
+        <div class="rail">
+          <h2 class="list-title related-title">Keep reading</h2>
+          <ul class="related">
+            {%- for p in related %}
+            <li><a href="{{ p.url }}"><span>{{ p.title }}<small>{{ p.description }}</small></span>{% include arrow.html %}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {%- endif %}
+      </div>
+    </section>

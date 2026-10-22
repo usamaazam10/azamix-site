@@ -1,0 +1,116 @@
+---
+layout: default
+nav: insights
+crumb: Insights
+title: Insights — technology explained clearly
+description: Clear, practical writing from Azamix on AI and automation, mobile and app development, APIs, developer tools and how to plan and run software.
+---
+{%- assign published_slugs = site.posts | map: "slug" -%}
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Insights</li>
+          </ol>
+        </nav>
+        <p class="kicker">Azamix Insights</p>
+        <h1 id="page-title">Technology worth knowing.</h1>
+        <div class="hero__sub rail">
+          <div></div>
+          <p class="lede">Explanations of the technology behind modern software and the decisions around it: what's changing, how things actually work, and what's worth building. Written for founders, managers and anyone who has to make technology decisions, not only for developers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="articles-title">
+      <div class="container">
+        {%- if site.posts.size > 0 %}
+        {% include section-head.html no="01" label="Articles" id="articles-title" title="Latest articles." %}
+        <div class="rail">
+          <div>
+            <p class="meta" data-filter-count aria-live="polite">{{ site.posts.size }} article{% if site.posts.size != 1 %}s{% endif %}</p>
+          </div>
+          <div>
+            <ul class="filter" data-topic-filter aria-label="Filter by topic">
+              <li><button type="button" data-topic="all" aria-pressed="true">All topics</button></li>
+              {%- for t in site.data.topics %}
+              {%- assign n = site.posts | where: "topic", t.key | size %}
+              {%- if n > 0 %}
+              <li><button type="button" data-topic="{{ t.key }}" aria-pressed="false">{{ t.name }}</button></li>
+              {%- endif %}
+              {%- endfor %}
+            </ul>
+            {% include post-list.html posts=site.posts %}
+          </div>
+        </div>
+        {%- else %}
+        {% include section-head.html no="01" label="Articles" id="articles-title" title="The first articles are in preparation." lede="We're writing a small set of genuinely useful articles before publishing anything. Rather than fill this page with placeholders, here's what's being written now." %}
+        <div class="rail">
+          <div class="rail__spacer"></div>
+          <div class="empty-state">
+            <h3>In preparation</h3>
+            <ul class="planned">
+              {%- for p in site.data.planned %}
+              {%- unless published_slugs contains p.slug %}
+              {%- assign pt = site.data.topics | where: "key", p.topic | first %}
+              <li><span>{{ p.title }}</span><span class="meta">{{ pt.name }}</span></li>
+              {%- endunless %}
+              {%- endfor %}
+            </ul>
+            <p class="gap-top-sm">Want to know when they're out? Subscribe to the <a class="text-link" href="/feed.xml">Atom feed</a> in any feed reader.</p>
+          </div>
+        </div>
+        {%- endif %}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="topics-title">
+      <div class="container">
+        {% include section-head.html no="02" label="Topics" id="topics-title" title="What we write about." %}
+        <div class="rail">
+          <div class="rail__spacer"></div>
+          <ul class="topic-list">
+            {%- for t in site.data.topics %}
+            {%- assign n = site.posts | where: "topic", t.key | size %}
+            <li id="topic-{{ t.key }}">
+              <h3>{{ t.name }}</h3>
+              <p>{{ t.description }}</p>
+              <p class="meta count">{% if n > 0 %}{{ n }} article{% if n != 1 %}s{% endif %}{% else %}Coming soon{% endif %}</p>
+            </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="standards-title">
+      <div class="container">
+        {% include section-head.html no="03" label="Editorial standards" id="standards-title" title="How we write." %}
+        <div class="rail">
+          <div class="rail__spacer"></div>
+          <ol class="index-list">
+            <li><h3>Useful first</h3><p>Every article should help a reader understand something or make a better decision. We don't publish pieces written only to rank in search results.</p></li>
+            <li><h3>Sourced and dated</h3><p>Facts that can change, such as prices, platform rules and product features, are linked to their source. Articles show when they were published and when they were last substantively updated.</p></li>
+            <li><h3>No invented evidence</h3><p>We don't make up statistics, quotes, test results or experiences. Where something is our opinion or a general pattern, we say so.</p></li>
+            <li><h3>Clear about interests</h3><p>Azamix sells software development, and articles end with a note saying so. If we ever publish sponsored or paid content, it will be clearly labelled as such.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="section-head rail">
+          <p class="section-label">From Azamix</p>
+          <div>
+            <h2 id="cta-title">Have a software problem worth solving?</h2>
+            <p class="lede">Tell us what you are trying to build or improve. We'll discuss the requirements and possible next steps.</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="/contact/">Start a project {% include arrow.html %}</a>
+              <a class="btn btn--on-dark" href="/services/">Our services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

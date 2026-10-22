@@ -1,0 +1,176 @@
+---
+layout: service
+nav: services
+title: API Development and System Integrations
+service_name: API Development and System Integrations
+service_key: api-integrations
+description: Azamix designs documented APIs for your products and builds reliable integrations between business systems, with data synchronisation, webhooks, retries and alerting.
+headline: Make your systems work as one.
+lede: We design APIs for your own products, and build integrations that keep your CRM, accounting, e-commerce and internal tools in step automatically. Built to handle the failures that every integration eventually meets, with a record of what was synced and when.
+glance:
+  - label: Typical work
+    value: REST APIs, third-party integrations, data sync
+  - label: Technologies
+    value: Node.js, Python
+  - label: Built in
+    value: Retries, logging, alerting
+topics: [explained, guides]
+faq_no: "07"
+cta_title: Systems that should be talking to each other?
+cta_text: List the tools involved and what needs to move between them. We'll discuss what's possible and possible next steps.
+faqs:
+  - q: Can you connect any two systems?
+    a: |
+      Only if each system offers a way in: an API, webhooks, a database we're allowed to read, or at worst a reliable file export. Some products restrict access to higher pricing plans. We check each system's documentation and limits during discovery, before promising what an integration can do.
+  - q: Why not use an off-the-shelf integration tool?
+    a: |
+      For simple cases, such as "when a form is submitted, add a row to a spreadsheet", a no-code automation tool is often the right choice, and we'll say so. Custom integrations make sense when the logic is complex, volumes are high, data needs transforming or checking, or failures must be handled carefully.
+  - q: What happens when one of the systems is down?
+    a: |
+      A well-built integration expects it. Changes are queued and retried, duplicates are prevented, and if something still fails after retries, the right person is alerted with enough detail to fix it. Nothing should silently go missing.
+  - q: Can you build an API for partners or a mobile app to use?
+    a: |
+      Yes. We design APIs with a clear contract, authentication, rate limits where needed, versioning so existing clients don't break, and documentation that other developers can work from.
+  - q: Do you maintain integrations after they're built?
+    a: |
+      Integrations need occasional attention because the systems they connect change their APIs over time. Monitoring and maintenance can be agreed after launch. See [Cloud, Deployment and Ongoing Engineering Support](/services/cloud-devops/).
+---
+    <section class="section" aria-labelledby="problems-title">
+      <div class="container">
+        {% include section-head.html no="01" label="Problems it addresses" id="problems-title" title="Where this usually starts." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <ul class="problems">
+            <li class="problem"><h3>Data is exported, edited and imported by hand</h3><p>A weekly ritual of CSV files moving between systems. It's slow, it breaks when someone's away, and errors are discovered weeks later.</p></li>
+            <li class="problem"><h3>Systems disagree with each other</h3><p>The stock level in the online shop doesn't match the warehouse system, or the CRM shows a different address from accounting. Synchronisation with a clear source of truth for each field resolves it.</p></li>
+            <li class="problem"><h3>A product needs an API</h3><p>A mobile app, a partner or a customer wants to connect to your system. That needs an API that's secure, documented and stable enough to build on.</p></li>
+            <li class="problem"><h3>Existing integrations fail silently</h3><p>A connection stopped working and nobody noticed until a customer complained. Logging, retries and alerts turn invisible failures into fixable ones.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="deliverables-title">
+      <div class="container">
+        {% include section-head.html no="02" label="Capabilities" id="deliverables-title" title="What we build." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <ul class="rule-list deliverables">
+            <li><strong>REST APIs</strong><span>APIs for your own products, with authentication, validation, versioning and documentation.</span></li>
+            <li><strong>Third-party integrations</strong><span>Connections to payment providers, CRMs, accounting, e-commerce, messaging and other services through their APIs.</span></li>
+            <li><strong>Webhooks</strong><span>Receiving and sending real-time notifications between systems, verified and processed safely.</span></li>
+            <li><strong>Data synchronisation</strong><span>Scheduled or event-driven jobs that keep records consistent across systems, with conflict rules agreed up front.</span></li>
+            <li><strong>Data transformation</strong><span>Mapping, cleaning and validating data as it moves, so each system receives what it expects.</span></li>
+            <li><strong>Monitoring and alerting</strong><span>Logs of every sync, dashboards of what succeeded and failed, and alerts when attention is needed.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fit-title">
+      <div class="container">
+        {% include section-head.html no="03" label="Use cases" id="fit-title" title="Two ways to connect systems." lede="As the number of systems grows, how they're connected matters as much as the connections themselves." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <div>
+            <figure class="figure figure--flush">
+              <div class="figure__frame" role="img" aria-label="Diagram comparing point-to-point integrations, where every system connects directly to every other, with a hub approach, where each system connects once to a central integration service.">
+                <div class="figure__bar" aria-hidden="true"><span><b>Fig. 1</b>&nbsp;&nbsp;Point-to-point vs. a central integration layer</span><span>Simplified</span></div>
+                <div class="hub-compare" aria-hidden="true">
+                  <svg viewBox="0 0 240 180">
+                    <g stroke="#c8cbc5" stroke-width="1.2"><line x1="40" y1="40" x2="200" y2="40"/><line x1="40" y1="40" x2="40" y2="140"/><line x1="40" y1="40" x2="200" y2="140"/><line x1="200" y1="40" x2="40" y2="140"/><line x1="200" y1="40" x2="200" y2="140"/><line x1="40" y1="140" x2="200" y2="140"/></g>
+                    <g fill="#fff" stroke="#101923" stroke-width="1.2"><rect x="14" y="26" width="52" height="28" rx="6"/><rect x="174" y="26" width="52" height="28" rx="6"/><rect x="14" y="126" width="52" height="28" rx="6"/><rect x="174" y="126" width="52" height="28" rx="6"/></g>
+                    <g font-family="Geist Mono, monospace" font-size="9" fill="#101923" text-anchor="middle"><text x="40" y="43">CRM</text><text x="200" y="43">Shop</text><text x="40" y="143">Accounts</text><text x="200" y="143">Stock</text></g>
+                    <text x="120" y="174" font-family="Geist, sans-serif" font-size="10" fill="#646c7c" text-anchor="middle">6 connections for 4 systems</text>
+                  </svg>
+                  <svg viewBox="0 0 240 180">
+                    <g stroke="#0b7466" stroke-width="1.2"><line x1="40" y1="40" x2="120" y2="90"/><line x1="200" y1="40" x2="120" y2="90"/><line x1="40" y1="140" x2="120" y2="90"/><line x1="200" y1="140" x2="120" y2="90"/></g>
+                    <g fill="#fff" stroke="#101923" stroke-width="1.2"><rect x="14" y="26" width="52" height="28" rx="6"/><rect x="174" y="26" width="52" height="28" rx="6"/><rect x="14" y="126" width="52" height="28" rx="6"/><rect x="174" y="126" width="52" height="28" rx="6"/></g>
+                    <rect x="88" y="76" width="64" height="28" rx="6" fill="#101923"/>
+                    <g font-family="Geist Mono, monospace" font-size="9" fill="#101923" text-anchor="middle"><text x="40" y="43">CRM</text><text x="200" y="43">Shop</text><text x="40" y="143">Accounts</text><text x="200" y="143">Stock</text></g>
+                    <text x="120" y="93" font-family="Geist Mono, monospace" font-size="9" fill="#74d4c3" text-anchor="middle">Integration</text>
+                    <text x="120" y="174" font-family="Geist, sans-serif" font-size="10" fill="#646c7c" text-anchor="middle">4 connections, one place to monitor</text>
+                  </svg>
+                </div>
+              </div>
+            </figure>
+            <div class="pair fit gap-top">
+              <div>
+                <h3>Direct connections suit</h3>
+                <ul class="rule-list rule-list--compact marked marked--plus">
+                  <li>Two or three systems with simple, stable data flows</li>
+                  <li>Cases a no-code automation tool already handles reliably</li>
+                </ul>
+              </div>
+              <div>
+                <h3>A central integration layer suits</h3>
+                <ul class="rule-list rule-list--compact marked marked--plus">
+                  <li>Several systems sharing the same records</li>
+                  <li>Data that needs transforming, checking or combining</li>
+                  <li>Flows where failures must be visible and recoverable</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tech-title">
+      <div class="container">
+        {% include section-head.html no="04" label="Technical considerations" id="tech-title" title="What makes an integration reliable." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <div class="two-col-text">
+            <div>
+              <h3>A source of truth for each field</h3>
+              <p>When two systems hold the same customer, which one wins if they disagree? We agree this field by field before writing code, because most sync problems are really undecided ownership.</p>
+            </div>
+            <div>
+              <h3>Safe retries</h3>
+              <p>Networks fail and services go down. Operations are designed so that retrying them doesn't create duplicates, and failed items wait in a queue rather than disappearing.</p>
+            </div>
+            <div>
+              <h3>Rate limits and quotas</h3>
+              <p>Most third-party APIs limit how many requests you can make. We design syncs around those limits, batching where possible, so the integration doesn't fail as volumes grow.</p>
+            </div>
+            <div>
+              <h3>Versioning and contracts</h3>
+              <p>An API others depend on can't change without warning. We version APIs, document them, and change them in ways that don't break existing clients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        {% include section-head.html no="05" label="Delivery" id="process-title" title="How a project runs." %}
+        <ol class="stages stages--compact">
+          <li class="stage rail reveal"><div class="stage__name"><span>01</span><h3>Inventory the systems</h3></div><div class="pair"><p>Which systems hold which data, what each one's API allows, and its limits and costs.</p><p class="stage__out">A map of systems and data flows</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>02</span><h3>Agree the rules</h3></div><div class="pair"><p>Sources of truth, field mappings, timing, and what should happen when things go wrong.</p><p class="stage__out">An integration specification</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>03</span><h3>Build against test accounts</h3></div><div class="pair"><p>Integrations developed against sandbox or test environments wherever the providers offer them.</p><p class="stage__out">Working flows on test data</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>04</span><h3>Reconcile and switch on</h3></div><div class="pair"><p>Existing records matched up, a supervised first run, and checks that the numbers agree.</p><p class="stage__out">Live, verified synchronisation</p></div></li>
+          <li class="stage rail reveal"><div class="stage__name"><span>05</span><h3>Monitor and document</h3></div><div class="pair"><p>Dashboards, alerts and documentation of every flow and how to fix common failures.</p><p class="stage__out">Integrations someone can support</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ownership-title">
+      <div class="container">
+        {% include section-head.html no="06" label="Security and ownership" id="ownership-title" title="Security and ownership." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          <div class="two-col-text">
+            <div>
+              <h3>Credentials and access</h3>
+              <p>Integrations use the narrowest permissions each system allows, credentials are stored as secrets rather than in code, and incoming webhooks are verified before they're trusted. We recommend API accounts be registered to your organisation.</p>
+            </div>
+            <div>
+              <h3>Ownership and handover</h3>
+              <p>Ownership of the code and deliverables is set out in the project agreement. Documentation covers each data flow, its schedule, its failure modes and how to recover from them.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

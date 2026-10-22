@@ -1,0 +1,87 @@
+---
+layout: default
+---
+{%- comment -%}
+  Service page. The page body holds the service-specific sections; this layout adds
+  the hero, related articles (published only), FAQs, the inquiry CTA and other services.
+{%- endcomment -%}
+{%- assign contact_url = "/contact/?service=" | append: page.service_key -%}
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li aria-current="page">{{ page.service_name }}</li>
+          </ol>
+        </nav>
+        <p class="kicker">{{ page.service_name }}</p>
+        <h1 id="page-title">{{ page.headline }}</h1>
+        <div class="hero__sub rail">
+          <dl class="glance">
+            {%- for g in page.glance %}
+            <div><dt>{{ g.label }}</dt><dd>{{ g.value }}</dd></div>
+            {%- endfor %}
+          </dl>
+          <div>
+            <p class="lede">{{ page.lede }}</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="{{ contact_url }}">Discuss your project {% include arrow.html %}</a>
+              <a class="btn btn--ghost" href="#faq-title">Read the FAQs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{{ content }}
+
+    {%- assign related_posts = site.posts | where_exp: "p", "page.topics contains p.topic" %}
+    {%- if related_posts.size > 0 %}
+    <section class="section" aria-labelledby="reading-title">
+      <div class="container">
+        {% include section-head.html label="Further reading" id="reading-title" title="Related insights." %}
+        <div class="rail">
+          <div class="rail__spacer"></div>
+          {% assign few = related_posts | slice: 0, 3 %}
+          {% include post-list.html posts=few %}
+        </div>
+      </div>
+    </section>
+    {%- endif %}
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container">
+        {% include section-head.html no=page.faq_no label="Questions" id="faq-title" title="Frequently asked questions." %}
+        <div class="rail reveal">
+          <div class="rail__spacer"></div>
+          {% include faq.html items=page.faqs %}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="section-head rail reveal">
+          <p class="section-label">Next step</p>
+          <div>
+            <h2 id="cta-title">{{ page.cta_title }}</h2>
+            <p class="lede">{{ page.cta_text }}</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="{{ contact_url }}">Start a project {% include arrow.html %}</a>
+              <a class="btn btn--on-dark" href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="rail">
+          <h2 class="list-title related-title">Other services</h2>
+          <ul class="related">
+            {%- for s in site.data.services %}
+            {%- unless s.key == page.service_key %}
+            <li><a href="{{ s.url }}"><span>{{ s.name }}<small>{{ s.summary }}</small></span>{% include arrow.html %}</a></li>
+            {%- endunless %}
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>

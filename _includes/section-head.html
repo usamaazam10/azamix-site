@@ -1,0 +1,14 @@
+{%- comment -%}
+  Ink rule + label in the rail + heading in the content column.
+  Params: no, label, id, title, lede (optional, may contain HTML), level (default h2)
+{%- endcomment -%}
+{%- assign hl = include.level | default: "h2" -%}
+        <div class="section-head rail reveal">
+          <p class="section-label">{% if include.no %}<span>{{ include.no }}</span>{% endif %}{{ include.label }}</p>
+          <div>
+            <{{ hl }} id="{{ include.id }}">{{ include.title }}</{{ hl }}>
+            {%- if include.lede %}
+            <p class="lede">{{ include.lede }}</p>
+            {%- endif %}
+          </div>
+        </div>

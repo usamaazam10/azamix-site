@@ -1,0 +1,74 @@
+{%- comment -%}
+  Project inquiry form. Delivery is set by `form_endpoint` in _config.yml:
+  - empty: submitting opens the visitor's email app with the inquiry filled in
+  - a form-backend URL (e.g. https://formspree.io/f/XXXX): the inquiry is POSTed as JSON
+  The visitor only ever sees "sent" when a server has confirmed it.
+{%- endcomment -%}
+          <div class="form-card reveal">
+            <h2 class="h3-size" id="form-title">Project inquiry</h2>
+            <p class="form-card__sub">A few sentences is enough to start. We'll ask follow-up questions if we need more.</p>
+            <noscript>
+              <p class="form-foot__note">This form needs JavaScript. Please email your project details to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+            </noscript>
+            <form id="inquiry-form" data-endpoint="{{ site.form_endpoint }}" data-email="{{ site.email }}" aria-labelledby="form-title">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Your name</label>
+                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" />
+                  <p class="field__error" id="name-error"></p>
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error" />
+                  <p class="field__error" id="email-error"></p>
+                </div>
+                <div class="field">
+                  <label for="company">Company <span class="optional">(optional)</span></label>
+                  <input class="input" id="company" name="company" type="text" autocomplete="organization" />
+                </div>
+                <div class="field">
+                  <label for="service">What do you need?</label>
+                  <select class="input" id="service" name="service" required aria-describedby="service-error">
+                    <option value="">Select the closest match</option>
+                    {%- for s in site.data.services %}
+                    <option value="{{ s.key }}">{{ s.name }}</option>
+                    {%- endfor %}
+                    <option value="not-sure">Not sure yet</option>
+                  </select>
+                  <p class="field__error" id="service-error"></p>
+                </div>
+                <div class="field field--full">
+                  <label for="timeline">Timeline <span class="optional">(optional)</span></label>
+                  <select class="input" id="timeline" name="timeline">
+                    <option value="">No fixed timeline</option>
+                    <option>As soon as possible</option>
+                    <option>Within 1–3 months</option>
+                    <option>In 3+ months</option>
+                    <option>Just exploring</option>
+                  </select>
+                </div>
+                <div class="field field--full">
+                  <label for="message">About your project</label>
+                  <textarea class="input" id="message" name="message" rows="6" required aria-describedby="message-hint message-error" placeholder="What are you trying to build or improve? Who will use it? Does it need to work with any existing systems?"></textarea>
+                  <p class="field__hint" id="message-hint">At least 20 characters. Please don't include passwords or confidential data; if you need an NDA first, just say so.</p>
+                  <p class="field__error" id="message-error"></p>
+                </div>
+                <div class="hp" aria-hidden="true">
+                  <label for="website">Leave this field empty</label>
+                  <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+              </div>
+              <div class="form-foot">
+                <div class="form-status" id="form-status" hidden></div>
+                <button class="btn btn--primary btn--block" type="submit">
+                  {% if site.form_endpoint != "" %}Send inquiry{% else %}Continue in your email app{% endif %}
+                  {% include arrow.html %}
+                </button>
+                {%- if site.form_endpoint == "" %}
+                <p class="form-foot__note">This opens your email app with the inquiry filled in, addressed to {{ site.email }}. Nothing is sent until you press Send there.</p>
+                {%- else %}
+                <p class="form-foot__note">Prefer email? Write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+                {%- endif %}
+              </div>
+            </form>
+          </div>

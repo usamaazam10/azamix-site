@@ -1,0 +1,24 @@
+# Editorial categories for Insights. Each article sets `topic:` to one of these keys.
+- key: ai-automation
+  name: AI and Automation
+  description: Where AI models and automation help in real workflows, and where they don't.
+
+- key: mobile
+  name: Mobile and App Development
+  description: How mobile apps are planned, built, shipped and kept running.
+
+- key: explained
+  name: Technology Explained
+  description: Plain-language explanations of the systems behind everyday software.
+
+- key: apps
+  name: Apps and Digital Products
+  description: Useful apps and products worth knowing about, and what makes them work.
+
+- key: developer-tools
+  name: Developer Tools and Frameworks
+  description: Frameworks, tools and platforms, compared on their actual trade-offs.
+
+- key: guides
+  name: Practical Guides
+  description: Step-by-step guidance for planning, buying and running software.

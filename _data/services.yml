@@ -1,0 +1,81 @@
+# Single source for the service list: homepage, services overview, footer,
+# "other services" links and the inquiry form's options all read from here.
+# `key` is also the value used by /contact/?service=<key>.
+
+- key: custom-software
+  name: Custom Software Development
+  short: Custom software
+  url: /services/custom-software/
+  summary: Internal systems, operational workflows and reporting built around how your team works.
+  problem: Work is spread across spreadsheets, email and tools that don't share data, so people re-key information and nobody has a reliable picture of what's happening.
+  approach: We map the workflow first, then build a system with a proper data model, roles and permissions, and the reports people actually use. Where existing tools work, we connect to them rather than replace them.
+  deliverables:
+    - Web-based business application
+    - Data model, roles and permissions
+    - Dashboards and reports
+    - Integrations with existing tools
+
+- key: mobile-apps
+  name: Mobile App Development
+  short: Mobile apps
+  url: /services/mobile-apps/
+  summary: iOS and Android apps, and the backend, admin tools and integrations that make them work.
+  problem: You need an app customers or staff will rely on, but an app is only the visible part. It also needs accounts, data, notifications and a way to manage it all.
+  approach: We choose between cross-platform and native based on your requirements, then build the app together with its backend and admin panel, and take it through testing and store submission.
+  deliverables:
+    - iOS and Android apps
+    - Backend API and admin panel
+    - Authentication, notifications, payments where needed
+    - Store submission support
+
+- key: web-applications
+  name: Web Applications and Platforms
+  short: Web applications
+  url: /services/web-applications/
+  summary: Customer portals, admin dashboards and SaaS products that run in the browser.
+  problem: Customers or staff need to log in, see their own data and get something done, and a brochure website or a shared spreadsheet can no longer do that.
+  approach: We design the screens around the tasks people need to complete, build a secure backend with clear permissions, and keep the application fast and accessible as it grows.
+  deliverables:
+    - Responsive web application
+    - Authentication and permissions
+    - Backend API
+    - Admin and reporting screens
+
+- key: ai-automation
+  name: AI Integration and Workflow Automation
+  short: AI and automation
+  url: /services/ai-automation/
+  summary: Practical automation and AI features with human review, cost control and clear limits.
+  problem: Staff spend hours on repetitive steps such as reading documents, copying data and chasing approvals, and it's hard to tell which parts AI can handle reliably.
+  approach: We start with the workflow, automate the predictable steps with ordinary code, and use AI models only where they're a good fit, with evaluation, human review and error handling designed in.
+  deliverables:
+    - Automated workflows and integrations
+    - Document and text processing
+    - AI features built on hosted model APIs
+    - Review queues, logging and cost monitoring
+
+- key: api-integrations
+  name: API Development and System Integrations
+  short: APIs and integrations
+  url: /services/api-integrations/
+  summary: APIs for your own products, and reliable connections between the systems you already use.
+  problem: Your CRM, accounting, e-commerce and internal tools each hold part of the picture, and keeping them in step depends on exports, imports and people.
+  approach: We design APIs with clear contracts and build integrations that handle failures, retries and duplicate data, so systems stay in sync without manual work.
+  deliverables:
+    - REST APIs with documentation
+    - Third-party integrations and webhooks
+    - Data synchronisation jobs
+    - Error handling and alerting
+
+- key: cloud-devops
+  name: Cloud, Deployment and Ongoing Engineering Support
+  short: Cloud and support
+  url: /services/cloud-devops/
+  summary: Hosting, deployment pipelines, monitoring and maintenance for the software we build.
+  problem: Software has to keep running after launch. Manual releases, missing backups and no monitoring turn small problems into outages.
+  approach: We set up the hosting, automated deployments, monitoring and backups your application needs, at a level of complexity that matches its size, and keep it maintained when agreed.
+  deliverables:
+    - Cloud hosting on AWS
+    - CI/CD pipelines
+    - Monitoring, logging and backups
+    - Maintenance and improvements by agreement

@@ -1,0 +1,27 @@
+# Articles in preparation, shown on /insights/ and the homepage while there are few published posts.
+# Each `slug` matches a file in _drafts/. Once that article is published (moved to _posts/),
+# it disappears from this list automatically; you can then delete the entry.
+- slug: native-vs-cross-platform-app-development
+  title: "Native vs. cross-platform app development: how to choose"
+  topic: mobile
+- slug: what-happens-behind-a-mobile-app
+  title: What happens behind the scenes when you use a mobile app?
+  topic: explained
+- slug: automation-opportunities-for-small-businesses
+  title: Practical software automation opportunities for small businesses
+  topic: ai-automation
+- slug: when-does-an-ai-api-make-sense
+  title: When does an AI API make sense for a business?
+  topic: ai-automation
+- slug: how-to-evaluate-a-software-development-company
+  title: How to evaluate a software development company
+  topic: guides
+- slug: how-apis-connect-business-systems
+  title: How APIs connect business systems
+  topic: explained
+- slug: before-building-your-first-mobile-app
+  title: What to consider before building your first mobile app
+  topic: guides
+- slug: maintaining-software-after-launch
+  title: How to maintain a software product after launch
+  topic: guides

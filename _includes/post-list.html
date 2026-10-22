@@ -1,0 +1,21 @@
+{%- comment -%}
+  Editorial list of published articles.
+  Params: posts (array), dark (true on navy grounds)
+{%- endcomment -%}
+<ol class="post-list{% if include.dark %} post-list--dark{% endif %}" role="list">
+  {%- for post in include.posts %}
+  {%- assign t = site.data.topics | where: "key", post.topic | first %}
+  {%- assign words = post.content | strip_html | number_of_words %}
+  <li class="post-row" data-topic="{{ post.topic }}">
+    <p class="post-row__meta meta">
+      <span class="post-row__topic">{{ t.name | default: "Insights" }}</span>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %b %Y" }}</time>
+      <span>{{ words | divided_by: 220 | plus: 1 }} min read</span>
+    </p>
+    <h3 class="post-row__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    {%- if post.description %}
+    <p class="post-row__dek">{{ post.description }}</p>
+    {%- endif %}
+  </li>
+  {%- endfor %}
+</ol>

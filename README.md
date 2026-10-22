@@ -1,51 +1,70 @@
 # azamix.com
 
-Static website for Azamix, served by GitHub Pages from the `main` branch (custom domain in `CNAME`).
-No build step: edit the HTML/CSS/JS and push.
+Website for Azamix, served by GitHub Pages from the `main` branch (custom domain in `CNAME`).
+GitHub Pages builds it with **Jekyll 3.10**, so shared parts (header, footer, forms, lists) are written once
+and reused. There's still no build step to run yourself: edit and push, and Pages builds it.
 
 ## Structure
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Homepage — hero, services, work, about, contact form |
-| `services/*/index.html` | Service detail pages (custom software, web & mobile, cloud & DevOps) |
-| `404.html` | Not-found page |
-| `assets/css/site.css` | All styles. Design tokens (colours, type, spacing) are at the top |
-| `assets/js/site.js` | Mobile menu, scroll reveal, contact form handling |
-| `assets/brand/` | Logo and symbol SVGs (light, dark, single colour) and the 512 px icon. Usage rules are in `BRAND.md` |
-| `assets/img/` | Favicon, touch icon, social sharing image |
-| `assets/fonts/` | Self-hosted Geist and Geist Mono (latin subset, SIL Open Font License) |
-| `robots.txt`, `sitemap.xml` | Search engine files — add new pages to the sitemap |
+| `index.html` | Homepage: hero, problems, services, solutions, process, principles, insights, FAQ, about, CTA |
+| `services/` | Overview (`index.html`) and one page per service. `web-mobile-apps/` redirects to `/services/` |
+| `approach/`, `about/`, `contact/` | How we work, About, Contact (with the inquiry form) |
+| `insights/index.html` | Insights index: articles, topic filter, empty state, editorial standards |
+| `_posts/` | Published articles (none yet). `_drafts/`: unpublished drafts, never built on the live site |
+| `_layouts/` | `default` (page shell), `service` (service pages), `article` (articles) |
+| `_includes/` | Header, footer, head/SEO meta, structured data, inquiry form, FAQ, section heading, post list |
+| `_data/services.yml` | The service list: drives nav, footer, homepage, overview, form options, "other services" |
+| `_data/topics.yml` | Insights categories |
+| `_data/planned.yml` | Articles "in preparation" listed on /insights/ while drafts are unpublished |
+| `feed.xml`, `sitemap.xml` | Generated Atom feed and sitemap (new pages and articles are added automatically) |
+| `assets/css/site.css` | All styles. Design tokens (colour, type, spacing) are at the top |
+| `assets/js/site.js` | Mobile menu, scroll reveal, Insights topic filter, inquiry form |
+| `assets/brand/`, `assets/img/`, `assets/fonts/` | Logo files (see `BRAND.md`), icons and social image, self-hosted fonts |
+| `tools/check_links.py` | Checks a built site for broken internal links, anchors and duplicate `<h1>`s |
 
-The header and footer are repeated in each HTML file. If you change one, change it in all five.
-
-## Contact form
-
-The project inquiry form on the homepage works in two modes, set by the `data-endpoint`
-attribute on `<form id="inquiry-form">` in `index.html`:
-
-- **Empty (current):** submitting opens the visitor's email app with the inquiry pre-filled,
-  addressed to usamaazam10@gmail.com. The page tells them clearly that nothing has been sent until they press Send.
-- **Set to a form backend URL:** the inquiry is POSTed as JSON and the visitor sees a real
-  success or error message based on the server's response.
-
-To send inquiries straight to your inbox, create a free form at [Formspree](https://formspree.io)
-(it accepts JSON posts from static sites), point it at usamaazam10@gmail.com, and paste its URL:
-
-```html
-<form id="inquiry-form" data-endpoint="https://formspree.io/f/your-form-id" ...>
-```
-
-Spam protection: a hidden honeypot field and a minimum fill time. Formspree adds its own filtering on top.
+Repo-only files (`README.md`, `BRAND.md`, `CLAIMS-AUDIT.md`, `EDITORIAL.md`, `Gemfile`, `tools/`) are excluded from the site in `_config.yml`.
 
 ## Local preview
 
+Needs Ruby (Homebrew Ruby works). Gems install into `vendor/bundle`, which is git-ignored.
+
 ```bash
-python3 -m http.server 8765
+bundle config set --local path vendor/bundle
+bundle install
+bundle exec jekyll serve
 ```
 
-Then open http://localhost:8765. (Root-relative paths like `/assets/...` need a server; opening the file directly won't load styles.)
+Then open http://127.0.0.1:4000. Add `--drafts` to preview unpublished articles.
+
+Before pushing, build and check links:
+
+```bash
+bundle exec jekyll build && python3 tools/check_links.py _site
+```
+
+## Common edits
+
+- **Add or change a service:** edit `_data/services.yml` (name, summary, problem, approach, deliverables), then the page in `services/<key>/index.html`. Its FAQs, headline and CTA are in that page's front matter.
+- **Contact details:** `email`, `phone` and `phone_href` in `_config.yml`.
+- **Publish an article:** see `EDITORIAL.md`.
+
+## Contact form
+
+Set by `form_endpoint` in `_config.yml`:
+
+- **Empty (current):** the button reads "Continue in your email app". Submitting opens the visitor's email app with the inquiry filled in, addressed to the site email. The page says clearly that nothing is sent until they press Send.
+- **A form-backend URL:** the inquiry is POSTed as JSON, and the visitor sees a success message only when the server confirms it, or an error with the email address if it fails.
+
+To receive inquiries directly, create a form at a service that accepts JSON posts from static sites (for example [Formspree](https://formspree.io)), point it at your inbox, and set:
+
+```yaml
+form_endpoint: "https://formspree.io/f/your-form-id"
+```
+
+No secret keys are needed or stored on the site. Spam protection: a hidden honeypot field and a minimum fill time, plus whatever the form service adds.
 
 ## Content rules
 
-Every factual claim must trace back to information the owner has supplied. See `CLAIMS-AUDIT.md` for the sources, what was removed, and the open questions.
+Every factual claim must trace back to information the owner has supplied. See `CLAIMS-AUDIT.md` for sources and open questions.

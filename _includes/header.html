@@ -1,0 +1,39 @@
+{%- assign nav_items = "services:/services/:Services|approach:/approach/:Approach|insights:/insights/:Insights|about:/about/:About|contact:/contact/:Contact" | split: "|" -%}
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/">
+        <img class="brand__logo" src="/assets/brand/azamix-logo-light.svg" alt="Azamix home" width="155" height="26" />
+      </a>
+      <nav class="nav" aria-label="Main">
+        <ul class="nav__list">
+          {%- for item in nav_items %}
+          {%- assign parts = item | split: ":" %}
+          <li><a class="nav__link{% if page.nav == parts[0] %} is-active{% endif %}" href="{{ parts[1] }}"{% if page.nav == parts[0] %} aria-current="{% if page.url == parts[1] %}page{% else %}true{% endif %}"{% endif %}>{{ parts[2] }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      <a class="btn btn--primary btn--sm header-cta header-cta--mobile" href="/contact/">Start a project</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="/">Home</a></li>
+        {%- for item in nav_items %}
+        {%- assign parts = item | split: ":" %}
+        <li><a href="{{ parts[1] }}"{% if page.url == parts[1] %} aria-current="page"{% endif %}>{{ parts[2] }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <a class="btn btn--primary btn--block" href="/contact/">Start a project</a>
+    <div class="mobile-menu__contact">
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="tel:{{ site.phone_href }}">{{ site.phone | replace: " ", "&nbsp;" }}</a>
+    </div>
+  </div>
