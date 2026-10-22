@@ -118,7 +118,7 @@
   if (!form) return;
 
   form.noValidate = true; // we show our own validation messages
-  var CONTACT_EMAIL = "info@azamix.com";
+  var CONTACT_EMAIL = "usamaazam10@gmail.com";
   var endpoint = (form.getAttribute("data-endpoint") || "").trim();
   var startedAt = Date.now();
   var submitBtn = form.querySelector('[type="submit"]');

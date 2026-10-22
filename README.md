@@ -25,12 +25,12 @@ The project inquiry form on the homepage works in two modes, set by the `data-en
 attribute on `<form id="inquiry-form">` in `index.html`:
 
 - **Empty (current):** submitting opens the visitor's email app with the inquiry pre-filled,
-  addressed to info@azamix.com. The page tells them clearly that nothing has been sent until they press Send.
+  addressed to usamaazam10@gmail.com. The page tells them clearly that nothing has been sent until they press Send.
 - **Set to a form backend URL:** the inquiry is POSTed as JSON and the visitor sees a real
   success or error message based on the server's response.
 
 To send inquiries straight to your inbox, create a free form at [Formspree](https://formspree.io)
-(it accepts JSON posts from static sites), point it at info@azamix.com, and paste its URL:
+(it accepts JSON posts from static sites), point it at usamaazam10@gmail.com, and paste its URL:
 
 ```html
 <form id="inquiry-form" data-endpoint="https://formspree.io/f/your-form-id" ...>

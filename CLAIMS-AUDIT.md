@@ -27,7 +27,7 @@ Anything else was either removed or labelled. Removed text is kept below so it c
 | Claim | Where | Source |
 | --- | --- | --- |
 | Azamix Software Solutions / Azamix | Footer, structured data | S1 footer |
-| info@azamix.com, +92 342 6147283 | Contact, footer, menu, structured data | S1, S2 |
+| usamaazam10@gmail.com (replaced info@azamix.com at the owner's request, October 2026), +92 342 6147283 | Contact, footer, menu, structured data, form | S1, S2 |
 | Custom software: enterprise systems, automation platforms, secure, scalable, tailored | Home, service page | S1 services |
 | Web & mobile apps: fast, responsive, modern frameworks, UX principles | Home, service page | S1 services |
 | Cloud & DevOps: CI/CD, cloud migration, automation, scalability, monitoring | Home, service page | S1 services |
