@@ -3,7 +3,7 @@ layout: default
 nav: services
 crumb: Services
 title: Services
-description: Azamix builds custom software, mobile apps, web applications, AI and automation features, APIs and integrations, and supports them in production. An overview of each service and how to choose.
+description: "Azamix builds custom software, mobile apps, web applications, AI and automation, APIs and integrations: from CRMs, ERPs and booking systems to SaaS products, marketplaces and AI assistants. An overview of every service and the full list of what we build."
 ---
     <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
@@ -13,7 +13,7 @@ description: Azamix builds custom software, mobile apps, web applications, AI an
             <li aria-current="page">Services</li>
           </ol>
         </nav>
-        <h1 id="page-title">What Azamix builds.</h1>
+        <h1 id="page-title">Software for every part of your business.</h1>
         <div class="hero__sub rail">
           <div></div>
           <div>
@@ -28,7 +28,7 @@ description: Azamix builds custom software, mobile apps, web applications, AI an
 
     <section class="section" aria-labelledby="services-title">
       <div class="container">
-        {% include section-head.html no="01" label="Services" id="services-title" title="Each service in brief." %}
+        {% include section-head.html no="01" label="Services" id="services-title" title="Pick your starting point." %}
         <div>
           {%- for s in site.data.services %}
           <article class="offer rail reveal{% if s.key == 'cloud-devops' %} offer--minor{% endif %}">
@@ -45,6 +45,31 @@ description: Azamix builds custom software, mobile apps, web applications, AI an
               {%- endif %}
             </div>
           </article>
+          {%- endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogue-all" aria-labelledby="catalogue-all-title">
+      <div class="container">
+        {% include section-head.html label="Everything we build" id="catalogue-all-title" title="The full list." lede="The services above are how we work. These are the kinds of software they add up to. If yours isn't here, it may still be a good fit: describe it and we'll tell you plainly." %}
+        <div class="catalogue">
+          {%- for c in site.data.catalogue %}
+          <div class="catalogue__group reveal" id="all-{{ c.key }}">
+            <div class="catalogue__head">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ c.icon }}</svg>
+              <h3>{{ c.name }}</h3>
+              <p>{{ c.blurb }}</p>
+              {%- for l in c.links %}
+              <a class="text-link" href="{{ l.url }}">{{ l.name }} {% include arrow.html %}</a>
+              {%- endfor %}
+            </div>
+            <ul class="cat__items">
+              {%- for i in c.items %}
+              <li><strong>{{ i.name }}</strong><span>{{ i.desc }}</span></li>
+              {%- endfor %}
+            </ul>
+          </div>
           {%- endfor %}
         </div>
       </div>

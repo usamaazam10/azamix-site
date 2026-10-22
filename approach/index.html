@@ -2,8 +2,8 @@
 layout: default
 nav: approach
 crumb: How we work
-title: How we work — process and engineering principles
-description: How Azamix runs software projects, from discovery to maintenance, and the engineering practices behind them, including testing, security, documentation, handover and confidentiality.
+title: How we work
+description: How a software project with Azamix runs, in four stages from first conversation to delivery, plus how estimates, changes, quality, handover and confidentiality are handled.
 ---
     <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
@@ -14,153 +14,126 @@ description: How Azamix runs software projects, from discovery to maintenance, a
           </ol>
         </nav>
         <p class="kicker">How we work</p>
-        <h1 id="page-title">No surprises, from first call to handover.</h1>
+        <h1 id="page-title">No black boxes. No surprises.</h1>
         <div class="hero__sub rail">
           <dl class="glance">
-            <div><dt>Process</dt><dd>Seven stages, scaled to the project</dd></div>
-            <div><dt>Principles</dt><dd>Seven habits behind the code</dd></div>
+            <div><dt>Stages</dt><dd>Discuss · Define · Build · Deliver</dd></div>
+            <div><dt>Estimates</dt><dd>Based on an agreed scope</dd></div>
           </dl>
-          <p class="lede">A software project goes well when everyone knows what's happening, what's been decided and what comes next. This page describes how Azamix runs projects and what you can expect at each stage, so you can judge the way we work before you talk to us.</p>
+          <p class="lede">Every project runs on the same four stages: discuss, define, build, deliver. Small projects move through them quickly; larger ones repeat the build stage several times. Either way, you always know what's happening, what we need from you and what comes next.</p>
         </div>
       </div>
     </section>
 
     <section class="section" id="process" aria-labelledby="process-title">
       <div class="container">
-        {% include section-head.html no="01" label="Process" id="process-title" title="The stages of a project." lede="Small projects move through these stages quickly and some overlap, but none are skipped. Timelines are estimated once the scope is understood, not before." %}
+        {% include section-head.html label="The stages" id="process-title" title="Four stages, always in the open." %}
         <ol class="stages">
           <li class="stage rail reveal">
-            <div class="stage__name"><span>01</span><h3>Discovery and requirements</h3></div>
+            <div class="stage__name"><span>01</span><h3>Discuss</h3></div>
             <div class="pair">
               <div>
-                <p>We learn how the work happens today, who will use the software, what it must connect to and what a good outcome looks like. We look at the actual spreadsheets, documents and tools involved, not only descriptions of them.</p>
-                <p class="stage__expect"><strong>From you:</strong> time with the people who do the work, and examples of real data.</p>
+                <p>We learn how the work happens today, who will use the software, what it must connect to and what a good outcome looks like. Real examples, such as the spreadsheets, forms or tools involved, tell us more than descriptions.</p>
+                <p class="stage__expect"><strong>From you:</strong> a description of the problem, and time with the people who do the work.</p>
               </div>
-              <p class="stage__out">A written summary of requirements and open questions</p>
+              <p class="stage__out">A shared understanding of the problem and open questions</p>
             </div>
           </li>
           <li class="stage rail reveal">
-            <div class="stage__name"><span>02</span><h3>Scope, priorities and technical planning</h3></div>
+            <div class="stage__name"><span>02</span><h3>Define</h3></div>
             <div class="pair">
               <div>
-                <p>We separate what the first version must do from what can wait, identify the riskiest parts, and choose the technical approach. If something is uncertain, such as an integration or an AI feature, we say so and plan how to test it early.</p>
+                <p>We separate what the first version must do from what can wait, choose the technical approach, and design the key screens and data model where the project needs them. Uncertain parts, such as a third-party integration or an AI feature, are identified and tested early.</p>
                 <p class="stage__expect"><strong>From you:</strong> decisions on priorities and trade-offs.</p>
               </div>
-              <p class="stage__out">An agreed scope, technical plan and estimate</p>
+              <p class="stage__out">A written scope, technical plan and estimate</p>
             </div>
           </li>
           <li class="stage rail reveal">
-            <div class="stage__name"><span>03</span><h3>UX/UI design and architecture</h3></div>
+            <div class="stage__name"><span>03</span><h3>Build</h3></div>
             <div class="pair">
               <div>
-                <p>Where the project needs it, we design the main screens around the most frequent tasks, and define the data model and system structure. Changing a design is cheap; changing built software is not.</p>
-                <p class="stage__expect"><strong>From you:</strong> review and feedback, ideally from future users.</p>
-              </div>
-              <p class="stage__out">Screens and an architecture to review</p>
-            </div>
-          </li>
-          <li class="stage rail reveal">
-            <div class="stage__name"><span>04</span><h3>Iterative implementation and feedback</h3></div>
-            <div class="pair">
-              <div>
-                <p>We build in short stages and share working software regularly on a staging environment or test build. Feedback shapes what comes next, and changes to scope are discussed openly rather than absorbed silently.</p>
-                <p class="stage__expect"><strong>From you:</strong> try each build and tell us what's wrong.</p>
+                <p>We build in short stages and share working software regularly on a test environment or test build. Your feedback shapes what comes next, and any change to scope is discussed with its effect on time and cost.</p>
+                <p class="stage__expect"><strong>From you:</strong> try each build and tell us what's wrong or missing.</p>
               </div>
               <p class="stage__out">Working software at regular intervals</p>
             </div>
           </li>
           <li class="stage rail reveal">
-            <div class="stage__name"><span>05</span><h3>Testing, security checks and quality assurance</h3></div>
+            <div class="stage__name"><span>04</span><h3>Deliver</h3></div>
             <div class="pair">
               <div>
-                <p>Automated tests cover the important logic. We test manually across devices and edge cases, check permissions and input handling, review dependencies for known vulnerabilities, and check accessibility and performance.</p>
-                <p class="stage__expect"><strong>From you:</strong> acceptance testing against real scenarios.</p>
+                <p>We test the release, deploy it to production, and hand over the source code, documentation and access. If you want ongoing support, such as updates, monitoring and improvements, we agree it separately.</p>
+                <p class="stage__expect"><strong>From you:</strong> acceptance testing, and accounts in your organisation's name for hosting, stores and services.</p>
               </div>
-              <p class="stage__out">A release candidate you've approved</p>
-            </div>
-          </li>
-          <li class="stage rail reveal">
-            <div class="stage__name"><span>06</span><h3>Deployment, documentation and handover</h3></div>
-            <div class="pair">
-              <div>
-                <p>We deploy to production through an automated pipeline, watch the release, and hand over the source code, documentation, credentials and instructions for running the system.</p>
-                <p class="stage__expect"><strong>From you:</strong> accounts in your organisation's name for hosting, stores and services.</p>
-              </div>
-              <p class="stage__out">A live system you can run without us</p>
-            </div>
-          </li>
-          <li class="stage rail reveal">
-            <div class="stage__name"><span>07</span><h3>Maintenance and future improvements</h3></div>
-            <div class="pair">
-              <div>
-                <p>When agreed, we keep the system secure and up to date, respond to issues, and plan further improvements based on how it's actually used.</p>
-                <p class="stage__expect"><strong>From you:</strong> a decision on what level of ongoing support the product needs.</p>
-              </div>
-              <p class="stage__out">Ongoing support, if you want it</p>
+              <p class="stage__out">A live system you can run, and support if you want it</p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section section--dark" id="principles" aria-labelledby="principles-title">
+    <section class="section" id="handover" aria-labelledby="handover-title">
       <div class="container">
-        {% include section-head.html no="02" label="Engineering principles" id="principles-title" title="What the principles mean in practice." lede="Every agency claims quality. These are the specific things we do, which you're welcome to ask about and check." %}
-        <div class="rail reveal">
-          <div class="rail__spacer"></div>
-          <ol class="index-list">
-            <li><h3>Maintainable architecture</h3><p>Clear separation between interface, business rules and data. Consistent structure and naming. Code reviewed before it's merged. <strong>The test: could another competent developer take it over?</strong></p></li>
-            <li><h3>Appropriate technology selection</h3><p>Established, well-supported tools chosen for the problem and for who will maintain them. No experimental frameworks in production systems. <strong>We'll recommend an existing product when it beats building.</strong></p></li>
-            <li><h3>Security and privacy</h3><p>Server-side permission checks on every request. Secrets in a secrets store, never in code. Personal data minimised and access logged. Dependencies kept patched. <strong>Security decisions are made in planning, not after launch.</strong></p></li>
-            <li><h3>Testing and reliability</h3><p>Automated tests for important logic, run on every change. Repeatable deployments with a way to roll back. Errors reported to someone who will act. <strong>Backups are restored, not just taken.</strong></p></li>
-            <li><h3>Performance and accessibility</h3><p>Pages and screens tested on ordinary devices and connections. Semantic markup, keyboard support, contrast and screen-reader labels from the first screen. <strong>Accessibility is part of "done".</strong></p></li>
-            <li><h3>Documentation and knowledge transfer</h3><p>Setup and deployment instructions, architecture notes, and decisions recorded with their reasons as the project goes. A walkthrough of the system for your team or next developer at handover. <strong>Documentation is written for the next person, not as a formality.</strong></p></li>
-            <li><h3>Long-term maintainability</h3><p>Source code, documentation and deployment instructions handed over. Accounts in your name. Widely known technology so others can support it. <strong>You should never be locked in.</strong></p></li>
-          </ol>
+        {% include section-head.html label="Handover" id="handover-title" title="Everything you need to run it without us." lede="Delivery isn't a login and a goodbye. When a project is handed over, this is what you get." %}
+        <div class="handover reveal">
+          <div class="showcase__stage">
+            <span class="concept-tag">Illustration</span>
+            <div class="ui-frame" role="img" aria-label="Illustration of a handed-over code repository: folders for the mobile app, web app, API, infrastructure and tests, a docs folder with architecture, deployment and runbook files and a record of decisions, and a note that all checks passed and the code is deployed to production.">
+              <div class="ui" aria-hidden="true">{% include ui/handover.html %}</div>
+            </div>
+          </div>
+          <ul class="checks">
+            <li><strong>The source code</strong>In a repository you control, with the history of how it was built.</li>
+            <li><strong>Documentation</strong>Architecture, deployment and day-to-day running, plus the reasons behind major decisions.</li>
+            <li><strong>Automated tests and deployment</strong>So changes can be made safely, by us or by anyone you choose.</li>
+            <li><strong>Accounts in your name</strong>Hosting, app stores and third-party services, which we recommend registering to your organisation.</li>
+            <li><strong>A walkthrough</strong>A guided tour of the system for your team or your next developer.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" id="estimates" aria-labelledby="estimates-title">
+    <section class="section" id="quality" aria-labelledby="quality-title">
       <div class="container">
-        {% include section-head.html no="03" label="Estimates" id="estimates-title" title="How we talk about time and cost." %}
+        {% include section-head.html label="Quality" id="quality-title" title="Built for year three, not just launch day." %}
         <div class="rail reveal">
           <div class="rail__spacer"></div>
           <div class="two-col-text">
             <div>
-              <h3>No numbers before understanding</h3>
-              <p>A price or deadline given before discovery is a guess. We'd rather spend a little time understanding the problem and give you an estimate based on an agreed scope, along with the assumptions behind it.</p>
+              <h3>Security and privacy</h3>
+              <p>Permissions are checked on the server, secrets are kept out of the code, and only the data the software needs is collected. These decisions are made during planning, not after launch.</p>
             </div>
             <div>
-              <h3>Uncertainty said out loud</h3>
-              <p>Some parts of a project are predictable; others, such as a third-party integration or an AI feature, carry real uncertainty. We identify those parts and, where it helps, test them first so the rest of the plan rests on evidence.</p>
+              <h3>Testing</h3>
+              <p>Important business logic has automated tests, and each release is checked by hand on the devices and scenarios that matter to your users.</p>
             </div>
             <div>
-              <h3>Smaller first versions</h3>
-              <p>A focused first release that real users can try usually teaches more than a long specification. Later stages can then be planned on what people actually need.</p>
+              <h3>Maintainable code</h3>
+              <p>Established, well-supported technology and a clear structure, so another competent developer could take the software over.</p>
             </div>
             <div>
-              <h3>Scope changes are decisions</h3>
-              <p>Needs change during a project, and that's normal. When they do, we explain the effect on time and cost so you can decide, rather than letting scope grow quietly.</p>
+              <h3>Documentation and handover</h3>
+              <p>Setup and deployment instructions, architecture notes and the reasons behind major decisions, written during the project rather than reconstructed at the end.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="communication" aria-labelledby="communication-title">
+    <section class="section" id="estimates" aria-labelledby="estimates-title">
       <div class="container">
-        {% include section-head.html no="04" label="Communication" id="communication-title" title="How you'll know where things stand." %}
+        {% include section-head.html label="Estimates and changes" id="estimates-title" title="Honest numbers, agreed up front." %}
         <div class="rail reveal">
           <div class="rail__spacer"></div>
           <div class="two-col-text">
             <div>
-              <h3>Working software, regularly</h3>
-              <p>Progress is shown through builds you can try, not only status reports. The format and frequency of updates, for example a regular call plus written notes, is agreed at the start.</p>
+              <h3>Estimates follow the scope</h3>
+              <p>A price or deadline given before the requirements are understood is a guess. We estimate once the scope is agreed, and state the assumptions behind it. A smaller first release is often the quickest way to learn what matters.</p>
             </div>
             <div>
-              <h3>Decisions on record</h3>
-              <p>Trade-offs, risks and changes to scope are raised when they come up and written down with their reasons, so nobody has to rely on memory later.</p>
+              <h3>Changes are decisions</h3>
+              <p>Needs change once people use working software, and that's normal. When they do, we explain the effect on time and cost so you can decide, rather than letting scope grow quietly.</p>
             </div>
           </div>
         </div>
@@ -169,13 +142,11 @@ description: How Azamix runs software projects, from discovery to maintenance, a
 
     <section class="section" id="confidentiality" aria-labelledby="confidentiality-title">
       <div class="container">
-        {% include section-head.html no="05" label="Confidentiality" id="confidentiality-title" title="How we handle your information." %}
+        {% include section-head.html label="Confidentiality" id="confidentiality-title" title="What you share with us stays with us." %}
         <div class="rail reveal">
           <div class="rail__spacer"></div>
           <div class="callout">
-            <h3>Confidential by default</h3>
-            <p>We don't publish client names, screenshots or project details without explicit permission. If you'd like a non-disclosure agreement before sharing details, mention it in your first message and we'll review it before you send anything sensitive.</p>
-            <p>During a project, we ask only for the access and data the work needs, and we recommend that credentials for hosting, stores and third-party services stay in your organisation's accounts rather than ours.</p>
+            <p>We don't publish client names, screenshots or project details without permission. If you'd like a non-disclosure agreement before sharing details, mention it in your first message and we'll review it before you send anything sensitive. During a project we ask only for the access and data the work needs.</p>
           </div>
         </div>
       </div>
@@ -187,7 +158,7 @@ description: How Azamix runs software projects, from discovery to maintenance, a
           <p class="section-label">Start a project</p>
           <div>
             <h2 id="cta-title">Have a software problem worth solving?</h2>
-            <p class="lede">Tell us what you are trying to build or improve. We'll discuss the requirements and possible next steps.</p>
+            <p class="lede">Tell us what you want to build, improve, or automate. We'll discuss your requirements and possible next steps.</p>
             <div class="btn-row">
               <a class="btn btn--primary" href="/contact/">Start a project {% include arrow.html %}</a>
               <a class="btn btn--on-dark" href="/services/">Our services</a>

@@ -1,0 +1,35 @@
+{%- comment -%} Concept UI: a customer portal where a business customer manages invoices and requests. Sample data only. {%- endcomment -%}
+<div class="ui-window">
+  <div class="ui-bar"><i></i><i></i><i></i><span>Customer portal</span></div>
+  <div class="ui-topnav">
+    <p class="ui-brand"><i></i>Portal</p>
+    <span class="is-on">Overview</span><span>Invoices</span><span>Requests</span><span>Documents</span>
+    <span class="ui-av">CM</span>
+  </div>
+  <div class="ui-portal">
+    <div class="ui-main">
+      <div>
+        <p class="ui-muted">Welcome back</p>
+        <p class="ui-title">Café on Main</p>
+      </div>
+      <div class="ui-kpis ui-kpis--3">
+        <div class="ui-kpi"><span>Open requests</span><strong>2</strong></div>
+        <div class="ui-kpi"><span>Next delivery</span><strong>Thu 23</strong></div>
+        <div class="ui-kpi"><span>Balance due</span><strong>1,240.00</strong></div>
+      </div>
+      <div class="ui-table" style="--cols: 1.1fr 1fr 1fr 0.9fr">
+        <div class="ui-row ui-row--h"><span>Invoice</span><span>Issued</span><span>Status</span><span></span></div>
+        <div class="ui-row"><span class="ui-mono">INV-3021</span><span>14 Oct</span><span><i class="ui-pill ui-pill--wait">Due 28 Oct</i></span><span class="ui-link">Download</span></div>
+        <div class="ui-row"><span class="ui-mono">INV-2987</span><span>30 Sep</span><span><i class="ui-pill ui-pill--ok">Paid</i></span><span class="ui-link">Download</span></div>
+        <div class="ui-row"><span class="ui-mono">INV-2950</span><span>16 Sep</span><span><i class="ui-pill ui-pill--ok">Paid</i></span><span class="ui-link">Download</span></div>
+      </div>
+    </div>
+    <div class="ui-aside">
+      <p class="ui-panel__h">New request</p>
+      <span class="ui-input">Change delivery day</span>
+      <span class="ui-input ui-input--area">From next week, could deliveries move to Wednesday mornings?</span>
+      <span class="ui-btn ui-btn--block">Send request</span>
+      <p class="ui-muted ui-small">Your team sees it instantly in the admin panel.</p>
+    </div>
+  </div>
+</div>

@@ -47,6 +47,8 @@ def main(root):
     problems, external = [], set()
     for f, c in pages.items():
         rel = "/" + str(f.relative_to(root))
+        if "<title>" not in f.read_text(encoding="utf-8"):  # usually broken front matter: the layout was skipped
+            problems.append(f"{rel}: no <title> (check the page's front matter)")
         if c.h1 != 1 and not c.redirect:  # redirect stubs have no <h1>
             problems.append(f"{rel}: {c.h1} <h1> elements")
         for link in c.links:

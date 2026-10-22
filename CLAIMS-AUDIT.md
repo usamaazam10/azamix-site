@@ -11,6 +11,44 @@ Every factual statement on the site has to trace back to one of these sources:
 
 Anything else was either removed or labelled. Removed text is kept below so it can be restored once the owner confirms it.
 
+## 22 October 2026 software catalogue
+
+`_data/catalogue.yml` lists 30 kinds of software in 5 categories (homepage explorer, full list on /services/), and /solutions/ now has 12 example industries. These describe what Azamix offers to build, not past projects. **Owner to confirm** every item is something you're prepared to deliver, in particular: ERP-style systems, marketplaces, LMS, subscription/billing platforms, community/social apps, AI assistants and chatbots, smart search, cloud migration. Delete any line you don't want to offer; the counts on the homepage update automatically.
+
+## 22 October 2026 content expansion
+
+| Addition | Where | Owner to confirm |
+| --- | --- | --- |
+| Technology stack adds TypeScript, PostgreSQL, REST APIs, webhooks, CI/CD, monitoring, hosted LLM APIs | Homepage "Technology" | **Yes**: TypeScript and PostgreSQL are new to the site. Remove any you don't use |
+| "Ways to start": Discovery, First version, Modernise, Keep it running | Homepage | Describes starting points only; no prices or terms. Confirm you offer a discovery phase |
+| Solutions page: six solution types with concept designs, "Typically includes" and "Often connects to" lists | /solutions/ | Concept designs are labelled; nothing is presented as client work |
+| Industries: six sectors with example use cases | /solutions/#industries | Labelled as example use cases, "not a list of past clients" |
+| Handover checklist and repository illustration | How we work | Same commitments as before (code, docs, accounts in client's name recommended, walkthrough) |
+| "Who we work with" and "What we care about" | About | Describes target clients, not past ones |
+| Before/after examples ("What changes") | Homepage | Typical situations, not client results |
+
+## 22 October 2026 follow-up (owner feedback)
+
+| Change | Why |
+| --- | --- |
+| Native development (Swift for iOS, Kotlin for Android) presented alongside cross-platform (Flutter, React Native) on the mobile page, homepage, About and service data; new FAQ "When is native development the better choice?" | Owner: native should be highlighted at least as much as cross-platform. **Owner to confirm** Swift and Kotlin are offered |
+| "Software development studio" removed everywhere; kicker is now "Custom software development", About and site description say "company" | Owner: "studio" suggested a small business |
+| Phone mockups redrawn (fixed phone proportions, timeline, map, booking slots) | Visual quality; still labelled concept/sample data |
+
+## 22 October 2026 studio redesign (S5)
+
+S5 — the owner's redesign brief: position Azamix as a focused software development studio, cut résumé-like content (principles, long process, about), show what the software could look like with labelled concept designs, no invented team, clients or results.
+
+| Change | Notes |
+| --- | --- |
+| "Software development studio" replaces "company" | Kicker, footer, About, site description. Says nothing about size |
+| Homepage cut from 8 sections + CTA to 5 + CTA | Removed: problems list, six service rows, solutions list, 7-stage process, 7 principles, About block |
+| Concept product interfaces (`_includes/ui/`) | Every one is labelled "Concept · sample data" or "Concept design… not a client project", and has descriptive alt text. Names in them are generic ("Sample Supplies Ltd.", "Café on Main"); numbers are illustrative UI, not results |
+| Process shortened to Discuss / Define / Build / Deliver | Same commitments as before (written scope and estimate, working builds, handover, support when agreed) |
+| "What you can expect" (4 points) | Restates existing commitments; no response times, team size or outcomes |
+| How we work page: principles cut to four short "Built to be maintained" points | Security, testing, maintainable code, documentation |
+| Homepage FAQ trimmed to the 7 questions in S5 | Change requests folded into the pricing answer |
+
 ## 22 October 2026 refinement (S4)
 
 ### Removed

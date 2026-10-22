@@ -1,5 +1,5 @@
 {%- comment -%} Insights joins the nav once `insights: true` in _config.yml (see EDITORIAL.md). {%- endcomment -%}
-{%- assign nav_string = "services:/services/:Services|approach:/approach/:How we work|about:/about/:About|contact:/contact/:Contact" -%}
+{%- assign nav_string = "services:/services/:Services|solutions:/solutions/:Solutions|approach:/approach/:How we work|about:/about/:About|contact:/contact/:Contact" -%}
 {%- if site.insights -%}{%- assign nav_string = nav_string | replace: "|about:", "|insights:/insights/:Insights|about:" -%}{%- endif -%}
 {%- assign nav_items = nav_string | split: "|" -%}
   <a class="skip-link" href="#main">Skip to content</a>
@@ -17,7 +17,7 @@
           {%- endfor %}
         </ul>
       </nav>
-      <a class="btn btn--primary btn--sm header-cta header-cta--mobile" href="/contact/">Start a project</a>
+      <a class="btn btn--primary btn--sm header-cta header-cta--mobile" href="/contact/">Discuss your project</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
         <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
@@ -34,7 +34,7 @@
         {%- endfor %}
       </ul>
     </nav>
-    <a class="btn btn--primary btn--block" href="/contact/">Start a project</a>
+    <a class="btn btn--primary btn--block" href="/contact/">Discuss your project</a>
     <div class="mobile-menu__contact">
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>
       <a href="tel:{{ site.phone_href }}">{{ site.phone | replace: " ", "&nbsp;" }}</a>

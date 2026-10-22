@@ -4,6 +4,7 @@ layout: default
 {%- comment -%}
   Service page. The page body holds the service-specific sections; this layout adds
   the hero, related articles (published only), FAQs, the inquiry CTA and other services.
+  Optional `visual` (a file in _includes/ui/) and `visual_alt` add a labelled concept design under the hero.
 {%- endcomment -%}
 {%- assign contact_url = "/contact/?service=" | append: page.service_key -%}
     <section class="page-hero" aria-labelledby="page-title">
@@ -31,6 +32,14 @@ layout: default
             </div>
           </div>
         </div>
+        {%- if page.visual %}
+        <figure class="service-visual">
+          <div class="ui-frame" role="img" aria-label="{{ page.visual_alt | escape }}">
+            <div class="ui" aria-hidden="true">{% include ui/{{ page.visual }} %}</div>
+          </div>
+          <figcaption class="concept-tag">Concept design with sample data, made for this site. Not a client project.</figcaption>
+        </figure>
+        {%- endif %}
       </div>
     </section>
 

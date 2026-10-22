@@ -1,0 +1,41 @@
+{%- comment -%} Concept UI: a job / workflow board in a browser window. Sample data only. {%- endcomment -%}
+<div class="ui-window">
+  <div class="ui-bar"><i></i><i></i><i></i><span>Operations · Jobs</span></div>
+  <div class="ui-app">
+    <div class="ui-side">
+      <p class="ui-brand"><i></i>Workspace</p>
+      <span>Overview</span>
+      <span class="is-on">Jobs</span>
+      <span>Customers</span>
+      <span>Inventory</span>
+      <span>Reports</span>
+    </div>
+    <div class="ui-main">
+      <div class="ui-head">
+        <p class="ui-title">Jobs</p>
+        <div class="ui-tools"><span class="ui-chip">This week</span><span class="ui-chip">All teams</span><span class="ui-btn">New job</span></div>
+      </div>
+      <div class="ui-board">
+        <div class="ui-col">
+          <p class="ui-col__h">Scheduled <b>4</b></p>
+          <div class="ui-card"><b>Boiler service</b><small>Unit 4 · Thu 10:00</small><div class="ui-card__f"><span class="ui-pill ui-pill--info">Maintenance</span><span class="ui-av">AK</span></div></div>
+          <div class="ui-card"><b>Site survey</b><small>Block B · Fri 09:30</small><div class="ui-card__f"><span class="ui-pill">Survey</span><span class="ui-av">MR</span></div></div>
+        </div>
+        <div class="ui-col">
+          <p class="ui-col__h">In progress <b>3</b></p>
+          <div class="ui-card ui-card--active"><b>Replace filter unit</b><small>Unit 12 · Today</small><div class="ui-steps"><i class="is-done"></i><i class="is-done"></i><i></i></div><div class="ui-card__f"><span class="ui-pill ui-pill--ok">On site</span><span class="ui-av">JS</span></div></div>
+          <div class="ui-card"><b>Quarterly inspection</b><small>Warehouse 2 · Today</small><div class="ui-card__f"><span class="ui-pill ui-pill--info">Inspection</span><span class="ui-av">AK</span></div></div>
+        </div>
+        <div class="ui-col">
+          <p class="ui-col__h">Waiting <b>1</b></p>
+          <div class="ui-card"><b>Pump repair</b><small>Unit 7 · Parts ordered</small><div class="ui-card__f"><span class="ui-pill ui-pill--wait">Awaiting parts</span><span class="ui-av">MR</span></div></div>
+        </div>
+        <div class="ui-col">
+          <p class="ui-col__h">Completed <b>6</b></p>
+          <div class="ui-card ui-card--done"><b>Annual safety check</b><small>Signed off · Mon</small></div>
+          <div class="ui-card ui-card--done"><b>Valve replacement</b><small>Signed off · Tue</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

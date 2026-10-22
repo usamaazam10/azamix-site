@@ -4,27 +4,32 @@ nav: services
 title: Mobile App Development — iOS and Android
 service_name: Mobile App Development
 service_key: mobile-apps
-description: Azamix builds iOS and Android apps together with the backend, admin tools and integrations they depend on, choosing cross-platform or native development based on your requirements.
+description: Azamix builds native iOS and Android apps in Swift and Kotlin, and cross-platform apps in Flutter and React Native, together with the backend, admin tools and integrations they depend on.
 headline: Mobile apps that work as well behind the screen as on it.
-lede: We build iOS and Android apps together with the backend, admin tools and integrations they depend on, and choose between cross-platform and native development based on what your app actually needs to do.
+lede: We build native iOS and Android apps and cross-platform apps, together with the backend, admin tools and integrations they depend on. The approach is chosen for each product, based on what the app needs to do, how it must perform and who will maintain it.
+visual: phones.html
+visual_alt: "Concept design of a customer mobile app: one screen tracks an order and offers quick reorders, a second books a visit by choosing a day and time."
 glance:
-  - label: Platforms
-    value: iOS and Android
-  - label: Main toolkit
-    value: Flutter or React Native (cross-platform)
+  - label: Native
+    value: Swift (iOS) · Kotlin (Android)
+  - label: Cross-platform
+    value: Flutter · React Native
   - label: Backend
     value: Node.js or Python APIs
 topics: [mobile, guides]
 faq_no: "07"
-cta_title: Planning an app?
-cta_text: Tell us who it's for and what they need to do with it. We'll discuss the requirements, the right technical approach, and possible next steps.
+cta_title: Got an app in mind?
+cta_text: Tell us who it's for and what they need to do with it. We'll help you choose the right approach, native or cross-platform, and map out the next steps.
 faqs:
-  - q: Will you recommend native or cross-platform development?
+  - q: Do you build native or cross-platform apps?
     a: |
-      Whichever fits the requirements. For cross-platform apps we work with Flutter and React Native, which both build iOS and Android apps from one codebase and suit most business and consumer apps. If your app depends heavily on platform-specific features, or you already have native iOS and Android teams, fully native development may be the better choice, and we'll say so during planning rather than after.
+      Both. Native apps are written separately for each platform, in Swift for iOS and Kotlin for Android. They give the fullest access to the device, the best performance for demanding features, and the look and behaviour users expect from their phone. Cross-platform apps, built with Flutter or React Native, share one codebase across iOS and Android, which usually lowers the cost of building and maintaining an app whose features are well supported on both. We recommend one during planning, based on your requirements, performance needs, who will maintain the app, and budget.
+  - q: When is native development the better choice?
+    a: |
+      When the app depends on deep platform integration, such as advanced camera or media processing, background tasks, Bluetooth devices, wearables, widgets or new operating system features on release day; when performance and platform feel are central to the product; or when you already have, or plan to build, separate iOS and Android teams.
   - q: Flutter or React Native?
     a: |
-      Both are mature, widely used and well suited to business apps, so the choice usually comes down to context. React Native uses JavaScript or TypeScript and the platform's own interface components, which makes it a natural fit if you already have a React web app or a team that knows React, since knowledge and some code can be shared. Flutter uses Dart and draws its own interface, which gives a consistent, highly customised look on both platforms. We recommend one during planning, based on your design, existing code and who will maintain the app.
+      If cross-platform is the right fit, the choice usually comes down to context. React Native uses JavaScript or TypeScript and the platform's own interface components, which suits teams that already work with React. Flutter uses Dart and draws its own interface, which gives a consistent, highly customised look on both platforms.
   - q: Can you build the backend and admin panel as well as the app?
     a: |
       Yes, and we usually recommend planning them together. The API, database and admin tools determine much of what the app can do, how it's managed and what it costs to run.
@@ -58,11 +63,12 @@ faqs:
 
     <section class="section" aria-labelledby="deliverables-title">
       <div class="container">
-        {% include section-head.html no="02" label="Capabilities" id="deliverables-title" title="What we build." lede="The exact scope depends on the app. This is what a complete mobile product usually involves." %}
+        {% include section-head.html no="02" label="Capabilities" id="deliverables-title" title="Everything behind the icon." lede="The exact scope depends on the app. This is what a complete mobile product usually involves." %}
         <div class="rail reveal">
           <div class="rail__spacer"></div>
           <ul class="rule-list deliverables">
-            <li><strong>iOS and Android apps</strong><span>Built with Flutter or React Native from a shared codebase, following each platform's conventions where it matters to users.</span></li>
+            <li><strong>Native iOS and Android apps</strong><span>Built in Swift and Kotlin, using each platform's own interface components, APIs and conventions.</span></li>
+            <li><strong>Cross-platform apps</strong><span>One Flutter or React Native codebase for both platforms, with native code added where a feature needs it.</span></li>
             <li><strong>Backend API and database</strong><span>The server the app talks to: business rules, data storage and integrations, in Node.js or Python.</span></li>
             <li><strong>Admin panel</strong><span>A web interface for your team to manage users, content, orders or whatever the app handles.</span></li>
             <li><strong>Authentication</strong><span>Email and password, one-time codes, or sign-in with Apple or Google, with secure session handling.</span></li>
@@ -78,7 +84,7 @@ faqs:
 
     <section class="section" aria-labelledby="fit-title">
       <div class="container">
-        {% include section-head.html no="03" label="Use cases" id="fit-title" title="Is a mobile app the right choice?" %}
+        {% include section-head.html no="03" label="Use cases" id="fit-title" title="App, or something simpler?" %}
         <div class="rail reveal">
           <div class="rail__spacer"></div>
           <div class="pair fit">
@@ -106,7 +112,7 @@ faqs:
 
     <section class="section" aria-labelledby="tech-title">
       <div class="container">
-        {% include section-head.html no="04" label="Technical considerations" id="tech-title" title="How requirements decide the approach." lede="The choice between cross-platform, native and a web app isn't a matter of taste. It follows from the product's requirements, its performance needs, who will maintain it, and the budget." %}
+        {% include section-head.html no="04" label="Technical considerations" id="tech-title" title="Native or cross-platform? Let the requirements decide." lede="The choice between cross-platform, native and a web app isn't a matter of taste. It follows from the product's requirements, its performance needs, who will maintain it, and the budget." %}
         <div class="rail reveal">
           <div class="rail__spacer"></div>
           <div>
@@ -117,8 +123,8 @@ faqs:
                   <tr><th scope="col">Approach</th><th scope="col">Strong when</th><th scope="col">Trade-offs</th></tr>
                 </thead>
                 <tbody>
-                  <tr><th scope="row">Cross-platform (Flutter or React Native)</th><td>You need iOS and Android, the interface is mostly your own design, and device features are the common ones: camera, location, notifications, storage.</td><td>Brand-new platform features can need extra native code. Apps are somewhat larger than their native equivalents.</td></tr>
-                  <tr><th scope="row">Native (Swift for iOS, Kotlin for Android)</th><td>The app depends on deep platform integration, advanced background processing or the newest OS features on day one, or you already have native teams.</td><td>Two codebases to build, test and maintain, which usually means higher cost for the same features.</td></tr>
+                  <tr><th scope="row">Native (Swift for iOS, Kotlin for Android)</th><td>Performance, platform look and feel, or deep device integration matter most: background processing, advanced camera or media, Bluetooth devices, wearables, widgets, or new OS features on day one.</td><td>Two codebases to build, test and maintain, so the same features usually cost more.</td></tr>
+                  <tr><th scope="row">Cross-platform (Flutter or React Native)</th><td>You need iOS and Android from one team, the interface is mostly your own design, and device features are the common ones: camera, location, notifications, storage.</td><td>Some platform features need extra native code, and new OS features can take time to be supported.</td></tr>
                   <tr><th scope="row">Web app in the browser</th><td>Most use is occasional, you want no install step, and device access needs are light.</td><td>No app store presence. More limited device access and background behaviour, especially on iOS.</td></tr>
                 </tbody>
               </table>
@@ -161,7 +167,7 @@ faqs:
 
     <section class="section" aria-labelledby="ownership-title">
       <div class="container">
-        {% include section-head.html no="06" label="Security and ownership" id="ownership-title" title="Security, maintenance and ownership." %}
+        {% include section-head.html no="06" label="Security and ownership" id="ownership-title" title="Secure today, maintained tomorrow, owned by you." %}
         <div class="rail reveal">
           <div class="rail__spacer"></div>
           <div class="two-col-text">

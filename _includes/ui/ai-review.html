@@ -1,0 +1,32 @@
+{%- comment -%} Concept UI: AI-assisted invoice processing with a human review step. Sample data only. {%- endcomment -%}
+<div class="ui-window">
+  <div class="ui-bar"><i></i><i></i><i></i><span>Invoices · Review queue</span></div>
+  <div class="ui-main">
+    <div class="ui-head">
+      <p class="ui-title">INV-20931 <span class="ui-pill ui-pill--wait">Needs review</span></p>
+      <div class="ui-tools"><span class="ui-chip">4 of 17 in queue</span></div>
+    </div>
+    <div class="ui-split ui-split--doc">
+      <div class="ui-doc" aria-hidden="true">
+        <p class="ui-doc__h">INVOICE</p>
+        <p class="ui-muted">Sample Supplies Ltd.</p>
+        <span class="ui-line" style="width:55%"></span><span class="ui-line" style="width:40%"></span>
+        <div class="ui-doc__rows">
+          <p><span>Filter units ×4</span><span>720.00</span></p>
+          <p><span>Fittings</span><span>180.00</span></p>
+          <p><span>Delivery</span><span>40.00</span></p>
+          <p class="ui-doc__total"><span>Total</span><span>1,240.00</span></p>
+        </div>
+      </div>
+      <div class="ui-fields">
+        <p class="ui-panel__h">Extracted fields</p>
+        <div class="ui-field"><span>Supplier</span><b>Sample Supplies Ltd.</b><i class="ui-conf">✓</i></div>
+        <div class="ui-field"><span>Invoice date</span><b>14 Oct 2026</b><i class="ui-conf">✓</i></div>
+        <div class="ui-field"><span>PO number</span><b class="ui-muted">Not found</b><i class="ui-conf ui-conf--flag">!</i></div>
+        <div class="ui-field is-flag"><span>Total</span><b>1,240.00</b><i class="ui-conf ui-conf--flag">!</i></div>
+        <p class="ui-note">Line items add up to 940.00. Check before approving.</p>
+        <div class="ui-tools"><span class="ui-btn">Approve and send</span><span class="ui-btn ui-btn--ghost">Edit fields</span></div>
+      </div>
+    </div>
+  </div>
+</div>

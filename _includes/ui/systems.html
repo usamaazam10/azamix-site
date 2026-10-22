@@ -1,0 +1,27 @@
+{%- comment -%} Concept diagram: how apps, an API and connected services fit together. {%- endcomment -%}
+<div class="ui-window ui-window--diagram">
+  <div class="ui-bar"><i></i><i></i><i></i><span>System overview</span></div>
+  <div class="sys">
+    <div class="sys__col">
+      <p class="sys__label">Apps</p>
+      <p class="sys__node">Web app<small>Customers</small></p>
+      <p class="sys__node">Mobile app<small>iOS · Android</small></p>
+      <p class="sys__node">Admin panel<small>Your team</small></p>
+    </div>
+    <div class="sys__wire"></div>
+    <div class="sys__col sys__col--core">
+      <p class="sys__label">API</p>
+      <p class="sys__node sys__node--core">API and business rules<small>Auth · permissions · validation</small></p>
+      <p class="sys__node">Database<small>Records and history</small></p>
+      <p class="sys__node">Background jobs<small>Sync · reports · email</small></p>
+    </div>
+    <div class="sys__wire"></div>
+    <div class="sys__col">
+      <p class="sys__label">Connected services</p>
+      <p class="sys__node">Accounting<small>Invoices · payments</small></p>
+      <p class="sys__node">CRM<small>Customers · deals</small></p>
+      <p class="sys__node">Payments, email, maps<small>Third-party APIs</small></p>
+    </div>
+    <div class="sys__foot"><span><i class="ui-dot"></i>Retries and error alerts</span><span><i class="ui-dot"></i>Sync log</span><span><i class="ui-dot"></i>Automated tests and deploys</span></div>
+  </div>
+</div>

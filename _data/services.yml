@@ -23,9 +23,9 @@
   url: /services/mobile-apps/
   summary: iOS and Android apps, and the backend, admin tools and integrations that make them work.
   problem: You need an app customers or staff will rely on, but an app is only the visible part. It also needs accounts, data, notifications and a way to manage it all.
-  approach: We choose between cross-platform and native based on your requirements, then build the app together with its backend and admin panel, and take it through testing and store submission.
+  approach: We build native apps in Swift and Kotlin or cross-platform apps in Flutter and React Native, chosen on your requirements, together with the backend and admin panel, and take them through testing and store submission.
   deliverables:
-    - iOS and Android apps
+    - Native or cross-platform iOS and Android apps
     - Backend API and admin panel
     - Authentication, notifications, payments where needed
     - Store submission support

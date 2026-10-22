@@ -109,6 +109,34 @@
     el.textContent = String(new Date().getFullYear());
   });
 
+  /* ---------- Showcase tabs (home) ----------
+     Without JavaScript every concept panel is shown in turn; with it, one at a time.
+     Arrow keys, Home and End move between tabs, following the ARIA tabs pattern. */
+  document.querySelectorAll("[data-showcase]").forEach(function (showcase) {
+    var tabs = Array.prototype.slice.call(showcase.querySelectorAll('[role="tab"]'));
+    var select = function (tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      });
+      if (focus) tab.focus();
+    };
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () {
+        select(tab, false);
+      });
+      tab.addEventListener("keydown", function (e) {
+        var next = { ArrowRight: i + 1, ArrowDown: i + 1, ArrowLeft: i - 1, ArrowUp: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+        if (next === undefined) return;
+        e.preventDefault();
+        select(tabs[(next + tabs.length) % tabs.length], true);
+      });
+    });
+    select(tabs[0], false);
+  });
+
   /* ---------- Insights topic filter ----------
      Buttons show only the articles in one topic. The choice is kept in the URL
      hash (/insights/#mobile) so it can be linked to. */

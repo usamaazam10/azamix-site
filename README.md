@@ -8,20 +8,23 @@ and reused. There's still no build step to run yourself: edit and push, and Page
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Homepage: hero, problems, services, solutions, process, principles, FAQ, about, CTA |
+| `index.html` | Homepage: hero, what we build, what changes (before/after), concept showcase (tabs), how we work, technology stack, ways to start, FAQ, inquiry CTA |
 | `services/` | Overview (`index.html`) and one page per service. `web-mobile-apps/` redirects to `/services/` |
-| `approach/`, `about/`, `contact/` | How we work, About, Contact (with the inquiry form) |
+| `solutions/` | Six solution types with concept designs, plus example use cases by industry |
+| `approach/`, `about/`, `contact/` | How we work (incl. handover), About, Contact (with the inquiry form) |
 | `insights/index.html` | Insights index. **Not live**: excluded from the build while `insights: false` (see below) |
 | `moved-insights.html` | Redirects `/insights/` to the homepage while Insights is switched off |
 | `_posts/` | Published articles (none yet). `_drafts/`: unpublished drafts, never built on the live site |
 | `_layouts/` | `default` (page shell), `service` (service pages), `article` (articles) |
 | `_includes/` | Header, footer, head/SEO meta, structured data, inquiry form, FAQ, section heading, post list |
+| `_includes/ui/` | Concept product interfaces drawn in HTML/CSS with sample data (board, dashboard, phones, AI review, system diagram). Used on the homepage and, via `visual:` front matter, on service pages. Always shown with a "concept / sample data" label |
 | `_data/services.yml` | The service list (incl. a `consider` trade-off per service): drives nav, footer, homepage, overview, form options, "other services" |
+| `_data/catalogue.yml` | The software catalogue: 5 categories × 6 kinds of software. Drives the homepage explorer and the full list on /services/ |
 | `_data/topics.yml` | Insights categories |
 | `_data/planned.yml` | Articles "in preparation" listed on /insights/ while drafts are unpublished |
 | `feed.xml`, `sitemap.xml` | Generated Atom feed and sitemap (new pages and articles are added automatically) |
 | `assets/css/site.css` | All styles. Design tokens (colour, type, spacing) are at the top |
-| `assets/js/site.js` | Mobile menu, scroll reveal, Insights topic filter, inquiry form |
+| `assets/js/site.js` | Mobile menu, scroll reveal, homepage showcase tabs, Insights topic filter, inquiry form |
 | `assets/brand/`, `assets/img/`, `assets/fonts/` | Logo files (see `BRAND.md`), icons and social image, self-hosted fonts |
 | `tools/check_links.py` | Checks a built site for broken internal links, anchors and duplicate `<h1>`s |
 
