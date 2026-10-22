@@ -3,4 +3,5 @@ theme: null # no default theme: stops Pages adding an unused assets/css/style.cs
 exclude:
   - README.md
   - CLAIMS-AUDIT.md
+  - BRAND.md
   - .claude

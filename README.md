@@ -12,6 +12,7 @@ No build step: edit the HTML/CSS/JS and push.
 | `404.html` | Not-found page |
 | `assets/css/site.css` | All styles. Design tokens (colours, type, spacing) are at the top |
 | `assets/js/site.js` | Mobile menu, scroll reveal, contact form handling |
+| `assets/brand/` | Logo and symbol SVGs (light, dark, single colour) and the 512 px icon. Usage rules are in `BRAND.md` |
 | `assets/img/` | Favicon, touch icon, social sharing image |
 | `assets/fonts/` | Self-hosted Geist and Geist Mono (latin subset, SIL Open Font License) |
 | `robots.txt`, `sitemap.xml` | Search engine files — add new pages to the sitemap |
