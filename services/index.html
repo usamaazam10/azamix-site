@@ -40,6 +40,9 @@ description: Azamix builds custom software, mobile apps, web applications, AI an
               <div><p class="col-label">The problem</p><p>{{ s.problem }}</p></div>
               <div><p class="col-label">What we do</p><p>{{ s.approach }}</p></div>
               <div><p class="col-label">You get</p><ul>{% for d in s.deliverables %}<li>{{ d }}</li>{% endfor %}</ul></div>
+              {%- if s.consider %}
+              <div class="offer__consider"><p class="col-label">Worth knowing</p><p>{{ s.consider }}</p></div>
+              {%- endif %}
             </div>
           </article>
           {%- endfor %}

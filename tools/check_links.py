@@ -40,12 +40,14 @@ def main(root):
     pages = {}
     for f in root.rglob("*.html"):
         c = Collector()
-        c.feed(f.read_text(encoding="utf-8"))
+        text = f.read_text(encoding="utf-8")
+        c.feed(text)
+        c.redirect = 'http-equiv="refresh"' in text
         pages[f] = c
     problems, external = [], set()
     for f, c in pages.items():
         rel = "/" + str(f.relative_to(root))
-        if c.h1 != 1 and "web-mobile-apps" not in rel:
+        if c.h1 != 1 and not c.redirect:  # redirect stubs have no <h1>
             problems.append(f"{rel}: {c.h1} <h1> elements")
         for link in c.links:
             u = urlparse(link)

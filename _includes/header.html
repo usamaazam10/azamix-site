@@ -1,4 +1,7 @@
-{%- assign nav_items = "services:/services/:Services|approach:/approach/:Approach|insights:/insights/:Insights|about:/about/:About|contact:/contact/:Contact" | split: "|" -%}
+{%- comment -%} Insights joins the nav once `insights: true` in _config.yml (see EDITORIAL.md). {%- endcomment -%}
+{%- assign nav_string = "services:/services/:Services|approach:/approach/:How we work|about:/about/:About|contact:/contact/:Contact" -%}
+{%- if site.insights -%}{%- assign nav_string = nav_string | replace: "|about:", "|insights:/insights/:Insights|about:" -%}{%- endif -%}
+{%- assign nav_items = nav_string | split: "|" -%}
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">

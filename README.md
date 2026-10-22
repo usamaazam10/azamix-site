@@ -8,14 +8,15 @@ and reused. There's still no build step to run yourself: edit and push, and Page
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Homepage: hero, problems, services, solutions, process, principles, insights, FAQ, about, CTA |
+| `index.html` | Homepage: hero, problems, services, solutions, process, principles, FAQ, about, CTA |
 | `services/` | Overview (`index.html`) and one page per service. `web-mobile-apps/` redirects to `/services/` |
 | `approach/`, `about/`, `contact/` | How we work, About, Contact (with the inquiry form) |
-| `insights/index.html` | Insights index: articles, topic filter, empty state, editorial standards |
+| `insights/index.html` | Insights index. **Not live**: excluded from the build while `insights: false` (see below) |
+| `moved-insights.html` | Redirects `/insights/` to the homepage while Insights is switched off |
 | `_posts/` | Published articles (none yet). `_drafts/`: unpublished drafts, never built on the live site |
 | `_layouts/` | `default` (page shell), `service` (service pages), `article` (articles) |
 | `_includes/` | Header, footer, head/SEO meta, structured data, inquiry form, FAQ, section heading, post list |
-| `_data/services.yml` | The service list: drives nav, footer, homepage, overview, form options, "other services" |
+| `_data/services.yml` | The service list (incl. a `consider` trade-off per service): drives nav, footer, homepage, overview, form options, "other services" |
 | `_data/topics.yml` | Insights categories |
 | `_data/planned.yml` | Articles "in preparation" listed on /insights/ while drafts are unpublished |
 | `feed.xml`, `sitemap.xml` | Generated Atom feed and sitemap (new pages and articles are added automatically) |
@@ -43,6 +44,12 @@ Before pushing, build and check links:
 ```bash
 bundle exec jekyll build && python3 tools/check_links.py _site
 ```
+
+## Insights (future publication)
+
+Azamix currently presents itself as a software development company only. The Insights publication is built but switched off:
+`insights: false` in `_config.yml`, `insights/` and `feed.xml` in its `exclude` list, and `moved-insights.html` redirecting `/insights/` to the homepage.
+With the flag off, the nav, footer, feed link and "Related insights" on service pages are hidden. To launch it, see "Launching Insights" in `EDITORIAL.md`.
 
 ## Common edits
 

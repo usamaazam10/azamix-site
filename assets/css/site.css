@@ -2237,6 +2237,29 @@ main:has(> .contact:last-child, > .cta:last-child, > .section--dark:last-child) 
   color: var(--accent);
 }
 
+.offer__consider {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--s-2) var(--col-gap);
+  padding-top: var(--s-4);
+  border-top: 1px dashed var(--line);
+}
+
+@media (min-width: 760px) {
+  .offer__consider {
+    grid-template-columns: minmax(0, 0.32fr) minmax(0, 1fr);
+    align-items: baseline;
+  }
+
+  .offer__consider .col-label {
+    margin-bottom: 0;
+  }
+}
+
+.offer__consider p:last-child {
+  max-width: 68ch;
+}
+
 .offer--minor .offer__title h3 {
   color: var(--muted);
 }

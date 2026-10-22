@@ -37,7 +37,7 @@ layout: default
 {{ content }}
 
     {%- assign related_posts = site.posts | where_exp: "p", "page.topics contains p.topic" %}
-    {%- if related_posts.size > 0 %}
+    {%- if site.insights and related_posts.size > 0 %}
     <section class="section" aria-labelledby="reading-title">
       <div class="container">
         {% include section-head.html label="Further reading" id="reading-title" title="Related insights." %}

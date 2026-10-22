@@ -1,6 +1,7 @@
 # Single source for the service list: homepage, services overview, footer,
 # "other services" links and the inquiry form's options all read from here.
 # `key` is also the value used by /contact/?service=<key>.
+# `consider`: the main constraint or trade-off to know before choosing the service.
 
 - key: custom-software
   name: Custom Software Development
@@ -14,6 +15,7 @@
     - Data model, roles and permissions
     - Dashboards and reports
     - Integrations with existing tools
+  consider: Custom software isn't always the right answer. If an existing product covers most of the workflow, configuring or connecting it is usually cheaper, and any custom system needs someone to maintain it after launch.
 
 - key: mobile-apps
   name: Mobile App Development
@@ -27,6 +29,7 @@
     - Backend API and admin panel
     - Authentication, notifications, payments where needed
     - Store submission support
+  consider: An app is an ongoing commitment. Operating system updates, store policy changes and backend hosting continue after launch, and store approval is decided by Apple and Google, not the developer.
 
 - key: web-applications
   name: Web Applications and Platforms
@@ -40,6 +43,7 @@
     - Authentication and permissions
     - Backend API
     - Admin and reporting screens
+  consider: If most visitors only need information, a well-built website costs less. Applications that hold customer data need their permissions designed from the start, not added later.
 
 - key: ai-automation
   name: AI Integration and Workflow Automation
@@ -53,6 +57,7 @@
     - Document and text processing
     - AI features built on hosted model APIs
     - Review queues, logging and cost monitoring
+  consider: AI output can be wrong, and accuracy can only be judged by testing on your own examples. Running costs grow with usage, and data sent to an AI provider is subject to that provider's terms.
 
 - key: api-integrations
   name: API Development and System Integrations
@@ -66,6 +71,7 @@
     - Third-party integrations and webhooks
     - Data synchronisation jobs
     - Error handling and alerting
+  consider: An integration can only do what each system allows. Some tools have no API, strict rate limits or incomplete webhooks, which we check before committing to a design.
 
 - key: cloud-devops
   name: Cloud, Deployment and Ongoing Engineering Support
@@ -79,3 +85,4 @@
     - CI/CD pipelines
     - Monitoring, logging and backups
     - Maintenance and improvements by agreement
+  consider: Mainly provided for the software we build. For an existing application, the first step is a review of how it's currently hosted and deployed.

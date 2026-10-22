@@ -22,13 +22,24 @@ All eight are complete first drafts, written for review. None has been published
 | `before-building-your-first-mobile-app.md` | Guides | Fees and the Google Play target-API rule were checked on 22 Oct 2026. Re-check |
 | `maintaining-software-after-launch.md` | Guides | — |
 
+## Insights is switched off (October 2026)
+
+Azamix is presenting itself as a software development company for now, so Insights is not on the live site. Nothing is deleted: the drafts, `insights/index.html`, `feed.xml`, the article layout and `_data/topics.yml` / `planned.yml` are all kept.
+
+### Launching Insights
+
+1. In `_config.yml`: set `insights: true`, and remove `insights` and `feed.xml` from `exclude`.
+2. Delete `moved-insights.html` (it would otherwise clash with `/insights/`).
+3. Publish at least a few articles first (below), so the section opens with real content.
+4. Optionally add an Insights section back to the homepage; the previous version is in git history (commit `10d7dee`, `index.html`, section "G. Insights").
+
 ## Preview drafts locally
 
 ```bash
 bundle exec jekyll serve --drafts
 ```
 
-Drafts show an "Unpublished draft" banner and appear on /insights/ only in this local preview.
+Drafts show an "Unpublished draft" banner. While Insights is switched off, open a draft at its URL (e.g. `/insights/<slug>/`); the index page itself only builds once Insights is launched.
 
 ## Publish an article
 

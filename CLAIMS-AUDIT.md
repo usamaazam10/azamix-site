@@ -6,9 +6,33 @@ Every factual statement on the site has to trace back to one of these sources:
 
 - **S1 — the original site** (`index.html` as of commit `2448c57`): service names and descriptions, the About text, the technology list, the three project entries, the email address, the phone number, and the name "Azamix Software Solutions".
 - **S2 — the owner's brief** (October 2026): info@azamix.com, +92 342 6147283, the three services, and the instruction not to fabricate credentials.
+- **S4 — the owner's refinement brief** (22 October 2026, later the same day): Azamix is a software development company only; the publication is a future plan and must not be presented as operating; remove the "no client portfolio" section without replacing it; headline, CTA and closing wording; the nine FAQ questions; no invented history, terms or results.
 - **S3 — the owner's content and structure brief** (22 October 2026): the dual services/publication positioning; six services (custom software, mobile, web, AI and automation, APIs and integrations, cloud and support); the seven-stage process; the seven engineering principles; the eight FAQ questions; "some projects are confidential"; no public portfolio; the positioning line and CTA wording.
 
 Anything else was either removed or labelled. Removed text is kept below so it can be restored once the owner confirms it.
+
+## 22 October 2026 refinement (S4)
+
+### Removed
+
+| What | Where | Why |
+| --- | --- | --- |
+| "Why there's no client portfolio here" callout | Homepage, Solutions section | S4: delete, don't replace |
+| "Client logos and a portfolio" / "What you won't find" section | About | Drew attention to the missing portfolio |
+| "Why you won't find a client list here" heading and portfolio wording | Approach, Confidentiality | Reworded to "How we handle your information" (NDA and access only) |
+| "one reason this site has no public portfolio" | Homepage NDA FAQ | Same |
+| Insights section, nav and footer links, feed link, "Explore insights" CTA, "We publish" facts, dual "practice and publication" positioning | Homepage, About, header, footer, `<head>` | S4: publication is a future plan. Switched off, not deleted (see README) |
+| Tagline "Technology worth knowing. Software worth building." | Hero kicker, footer, site config | Publication-oriented |
+
+### New statements: owner to confirm
+
+| Statement | Where |
+| --- | --- |
+| "Worth knowing" trade-off per service (e.g. store approval decided by Apple/Google; integrations limited by what each system exposes) | `_data/services.yml` → homepage, /services/ |
+| Change requests: impact explained, nothing "quietly added or dropped"; commercial handling "set out in the project agreement" | Homepage FAQ |
+| Documentation written during the project; handover walkthrough for the client's team or next developer | Homepage and Approach principles |
+| Updates format agreed at the start, decisions recorded with reasons | Approach, Communication |
+| "We ask only for the access and data the work needs" | Approach, Confidentiality |
 
 ## 22 October 2026 restructure
 
@@ -32,7 +56,7 @@ Sections 1–3 under "Removed until the owner confirms" (process, working princi
 
 | Statement | Where |
 | --- | --- |
-| "Our main mobile toolkit is Flutter"; native development recommended "when requirements call for it" | Mobile page, FAQ |
+| Cross-platform work in Flutter and React Native (React Native added at the owner's request, 22 Oct 2026); native development recommended "when requirements call for it" | Mobile page, FAQ, homepage diagram |
 | "Our cloud work is based on AWS" | Cloud page FAQ (S1 lists AWS; it doesn't say *only* AWS) |
 | Practices named under the principles: code review before merge, automated tests on every change, dependency vulnerability checks, accessibility checked while building, backups restored periodically | Homepage, Approach page, service pages |
 | "Mainly provided for the software we build" (cloud and support) | Cloud page, homepage note |
@@ -42,8 +66,8 @@ If any of these isn't how Azamix works, edit the wording rather than leaving it 
 
 ### Open questions (new)
 
-1. Can the eight draft articles be published under the byline "Azamix", or should they carry a named author?
-2. Is the "In preparation" list on /insights/ acceptable publicly? (Delete `_data/planned.yml` entries to hide it.)
+1. (When Insights launches) Can the eight draft articles be published under the byline "Azamix", or should they carry a named author?
+2. ~~Is the "In preparation" list on /insights/ acceptable publicly?~~ Moot while Insights is switched off.
 3. Should the form be connected to a form backend (see README) so inquiries arrive without the visitor's email app?
 4. Is there a privacy policy to link from the contact form? None is claimed today.
 
@@ -71,7 +95,7 @@ The original questions below about WhatsApp, the technology list and response ti
 | Custom software: enterprise systems, automation platforms, secure, scalable, tailored | Home, service page | S1 services |
 | Web & mobile apps: fast, responsive, modern frameworks, UX principles | Home, service page | S1 services |
 | Cloud & DevOps: CI/CD, cloud migration, automation, scalability, monitoring | Home, service page | S1 services |
-| Node.js, React, Python, Flutter, AWS, Docker, Kubernetes | About, service pages, diagram | S1 About ("our team has expertise across…") |
+| Node.js, React, React Native, Python, Flutter, AWS, Docker, Kubernetes | About, service pages, diagram | S1 About ("our team has expertise across…"); React Native added at the owner's request, 22 Oct 2026 |
 | "High-quality digital products", "strong UI/UX principles", "scalable architecture" | About | S1 About |
 | ERP system, e-commerce app, cloud dashboard, and their feature lists | Work | S1 projects (wording kept close to the original) |
 | API integrations, admin panels | Service lists | S1 project descriptions |

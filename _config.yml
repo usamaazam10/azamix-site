@@ -1,10 +1,10 @@
 # GitHub Pages builds this repo with Jekyll (the same version as the Gemfile pins).
 # Pages, articles and shared header/footer are assembled from _layouts and _includes.
 title: Azamix
-tagline: Technology worth knowing. Software worth building.
+tagline: Software built around how your business actually works.
 description: >-
-  Azamix designs and builds custom software, mobile apps, web platforms and practical AI
-  integrations, and publishes clear explanations of the technology behind them.
+  Azamix is a software development company. We design and build custom business software,
+  mobile apps, web platforms, practical AI integrations and system integrations.
 url: https://azamix.com
 email: usamaazam10@gmail.com
 phone: "+92 342 6147283"
@@ -22,8 +22,10 @@ kramdown:
   hard_wrap: false
   auto_ids: true
 
-# Published articles live in _posts/ and are served under /insights/.
-# Unpublished drafts live in _drafts/ and are never built on the live site.
+# Insights (a future publication) is switched off: the index and feed are excluded below,
+# and /insights/ redirects to the homepage (moved-insights.html). Drafts stay in _drafts/,
+# which the live site never builds. To launch it, follow "Launching Insights" in EDITORIAL.md.
+insights: false
 permalink: /insights/:title/
 
 defaults:
@@ -45,3 +47,6 @@ exclude:
   - Gemfile.lock
   - vendor
   - tools
+  # Insights is not live yet (see `insights: false` above)
+  - insights
+  - feed.xml
